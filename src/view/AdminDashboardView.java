@@ -51,7 +51,7 @@ return welcomeLabel;
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, 180, 100));
 
         welcomeLabel.setText("jLabel2");
-        getContentPane().add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, -1, -1));
+        getContentPane().add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 290, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

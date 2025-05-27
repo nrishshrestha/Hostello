@@ -8,6 +8,7 @@ package controller;
  *
  * @author ACER
  */
+import controller.WardenDashboardController;
 import dao.UserDao;
 import model.UserData;
 import view.LoginView;
@@ -25,13 +26,14 @@ import java.awt.event.MouseListener;
 public class LoginController {
     private LoginView loginView;
     private UserDao userDao;
-
+    public UserData existingUser;
     public LoginController(LoginView loginView) {
         this.loginView =loginView;
         this.userDao = new UserDao();
 
         this.loginView.getLoginButton().addActionListener(new LoginHandler());
         this.loginView.getRedirectLogin().addMouseListener(new RedirectToRegister());
+//        this.loginView.getForgotPassword().addMouseListioner(listiener);
     }
 
    
@@ -42,34 +44,41 @@ public void open() {
     public void close() {
         loginView.dispose();
     }
+    
+  
     class LoginHandler implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             String email = loginView.getEmailTextField();
             String password = loginView.getPasswordField();
-
+            WardenDashboardView wardenDashboardView= new WardenDashboardView();
+            AdminDashboardView adminDashboardView = new AdminDashboardView();
             if (email.isEmpty() || password.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Fill in all fields");
                 return;
             }
 
-            UserData existingUser = userDao.login(email, password);
+            existingUser = userDao.login(email, password);
             if (existingUser != null) {
-                JOptionPane.showMessageDialog(null, "Login Success");
+                JOptionPane.showMessageDialog(loginView, "Login Success");
 
-                close();
-
+              
                 if (existingUser.getRole().equals("admin")) {
-                    new AdminDashboardController().open();
+                    new AdminDashboardController(adminDashboardView, existingUser).open();
                 } else {
-                    new WardenDashboardController().open();
+                    new WardenDashboardController(wardenDashboardView,existingUser).open();
                 }
+                 close();
             } else {
-                JOptionPane.showMessageDialog(null, "Invalid credentials");
+                JOptionPane.showMessageDialog(loginView, "Invalid credentials");
             }
         }
     }
-
+    
+public UserData getExsistingUser(){
+  return existingUser;
+  
+  }
     class RedirectToRegister extends  MouseAdapter {
         @Override
         public void mouseClicked(MouseEvent e) {

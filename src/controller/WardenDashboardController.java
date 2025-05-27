@@ -6,24 +6,36 @@ package controller;
 
 import view.LoginView;
 import view.WardenDashboardView;
-
+import model.UserData;
 /**
  *
  * @author ACER
  */
 public class WardenDashboardController {
-     private WardenDashboardView view;
-     public WardenDashboardController() {
-        this.view = new WardenDashboardView();
-        this.view.getLogoutButton().addActionListener(e -> close());
+     private WardenDashboardView WardenDashboardView;
+     private UserData user;
+     private LoginController exsistingUser=new LoginController(new LoginView());
+     public WardenDashboardController(WardenDashboardView WardenDashboardView,UserData user) {
+        this.WardenDashboardView=WardenDashboardView;
+        
+        this.WardenDashboardView.getLogoutButton().addActionListener(e -> close());
+        
+        
+        String name=user.getUsername();
+        
+        this.WardenDashboardView.getWelcomeLabel().setText("Welcome"+"" +name);
     }
 
+         
+         
+         
+         
     public void open() {
-        view.setVisible(true);
+        this.WardenDashboardView.setVisible(true);
     }
 
     private void close() {
-        view.dispose();
+        this.WardenDashboardView.dispose();
        new LoginController(new LoginView()).open();
     }
 }

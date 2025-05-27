@@ -4,6 +4,8 @@
  */
 package controller;
 
+import controller.LoginController;
+import model.UserData;
 import view.AdminDashboardView;
 import view.LoginView;
 
@@ -12,19 +14,23 @@ import view.LoginView;
  * @author ACER
  */
 public class AdminDashboardController {
-    private AdminDashboardView view;
+    private AdminDashboardView AdminDashboardView;
     
-        public AdminDashboardController() {
-        this.view = new AdminDashboardView();
-        this.view.getLogoutButton().addActionListener(e -> close());
+        public AdminDashboardController(AdminDashboardView AdminDashboardView,UserData user) {
+        
+        this.AdminDashboardView.getLogoutButton().addActionListener(e -> close());
+        
+        String name=user.getUsername();
+        
+        this.AdminDashboardView.getWelcomeLabel().setText("Welcome"+"" +name);
     }
 
     public void open() {
-        view.setVisible(true);
+        this.AdminDashboardView.setVisible(true);
     }
 
     private void close() {
-        view.dispose();
+        this.AdminDashboardView.dispose();
        
         new LoginController(new LoginView()).open();
        
