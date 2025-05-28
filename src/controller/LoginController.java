@@ -9,6 +9,7 @@ package controller;
  * @author ACER
  */
 import controller.WardenDashboardController;
+import controller.mail.SMTPSMailSender;
 import dao.UserDao;
 import model.UserData;
 import view.LoginView;
@@ -21,6 +22,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import model.ResetPasswordRequest;
 
 
 public class LoginController {
@@ -30,14 +32,15 @@ public class LoginController {
     public LoginController(LoginView loginView) {
         this.loginView =loginView;
         this.userDao = new UserDao();
+ResetPassword resetPass=new ResetPassword();
 
         this.loginView.getLoginButton().addActionListener(new LoginHandler());
         this.loginView.getRedirectLogin().addMouseListener(new RedirectToRegister());
-//        this.loginView.getForgotPassword().addMouseListioner(listiener);
+        this.loginView.getForgotPassword().addMouseListener(new ResetPassword());
     }
 
    
-public void open() {
+    public void open() {
         loginView.setVisible(true);
     }
 
@@ -75,19 +78,112 @@ public void open() {
         }
     }
     
-public UserData getExsistingUser(){
+    public UserData getExsistingUser(){
   return existingUser;
   
   }
-    class RedirectToRegister extends  MouseAdapter {
+    class RedirectToRegister implements  MouseListener {
+        
+        
         @Override
         public void mouseClicked(MouseEvent e) {
-        close();
+             close();
         new controller.RegisterController(new view.RegisterView()).open();
-    }
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+            
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+           
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+            
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+            
+        }
+        
+        
+        
     
     }
 
     
+    
+    
+    class ResetPassword implements MouseListener{
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            String email =JOptionPane.showInputDialog(loginView,"Enter your email");
+            if(email.isEmpty()){
+                JOptionPane.showMessageDialog(loginView,"Email cannot be empty");
+            }else{
+                UserDao userDao =new UserDao();
+                boolean emailExists =userDao.checkEmail(email);
+                if(!emailExists){
+                    JOptionPane.showMessageDialog(loginView,"Email does not exist");
+                }else{
+                    String otp ="987586";
+            
+                    String title ="Reset Password Verification";
+                    String body ="The otp to reset your password is"+otp;
+                    boolean mailSent=SMTPSMailSender.sendMail(email,title,body);
+                    if(!mailSent){
+                        JOptionPane.showMessageDialog(loginView, "Failed to send OTP. Try again later.");
+                    }else{
+                        String otpReceived=JOptionPane.showInputDialog(loginView,"Enetr your otp code");
+                        if(!otp.equals(otpReceived)){
+                            JOptionPane.showMessageDialog(loginView,"Otp did not match");
+                        }else{
+                            String password=JOptionPane.showInputDialog(loginView,"Enter your new password");
+                            if (password.trim().isEmpty()){
+                                
+                            JOptionPane.showMessageDialog(loginView,"password cannot be empty");
+                            
+                          
+                            }else{
+                                ResetPasswordRequest resetReq =new ResetPasswordRequest(email,password);
+                                boolean updateResult=userDao.resetPassword(resetReq);
+                                if(updateResult){
+                                    JOptionPane.showMessageDialog(loginView,"password has been changed");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+            
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+           
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+            
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+            
+        }
+
+
+    }
     
 }

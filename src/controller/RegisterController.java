@@ -68,11 +68,30 @@ public class RegisterController {
     }
 
     // Inner class for "Already have account?" link
-    class RedirectToLogin extends MouseAdapter {
+    class RedirectToLogin implements MouseListener {
         @Override
         public void mouseClicked(MouseEvent e) {
             close();
             new LoginController(new LoginView()).open();
+        }
+        @Override
+        public void mousePressed(MouseEvent e) {
+            
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+           
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+            
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+            
         }
     }
 }

@@ -13,6 +13,7 @@ import model.UserData;
 import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import model.ResetPasswordRequest;
 
 public class UserDao {
 
@@ -64,7 +65,37 @@ public class UserDao {
         } finally {
             mySql.closeConnection(conn);
         }
+        
     }
+    
+    public boolean resetPassword(ResetPasswordRequest resetReq){
+//Step 1: write a string query
+String query ="UPDATE users SET password=? where email=?";
+Connection conn =mySql.openConnection();
+try{
+PreparedStatement stmt =conn.prepareStatement(query);
+stmt.setString(1,resetReq.getPassword());
+stmt.setString(2, resetReq.getEmail());
+
+int result =stmt.executeUpdate();
+return result>0;
+}catch(Exception e){
+return false;
+}finally{
+mySql.closeConnection(conn);
+}
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     public UserData login(String email, String password) {
