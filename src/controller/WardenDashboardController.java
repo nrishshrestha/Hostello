@@ -23,7 +23,7 @@ public class WardenDashboardController {
         
         String name=user.getUsername();
         
-        this.WardenDashboardView.getWelcomeLabel().setText("Welcome"+"" +name);
+        this.WardenDashboardView.getWelcomeLabel().setText("Welcome"+" " +name);
     }
 
          
