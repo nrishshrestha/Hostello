@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package hostello;
+package main;
 import controller.RegisterController;
 import view.RegisterView;
 
@@ -10,7 +10,7 @@ import view.RegisterView;
  *
  * @author ACER
  */
-public class Hostello {
+public class main {
     public static void main(String[] args) {
         javax.swing.SwingUtilities.invokeLater(() -> {
             RegisterView registerView = new RegisterView();
