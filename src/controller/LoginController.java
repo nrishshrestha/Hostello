@@ -62,6 +62,11 @@ ResetPassword resetPass=new ResetPassword();
             }
 
             existingUser = userDao.login(email, password);
+            
+            
+            
+            
+            
             if (existingUser != null) {
                 JOptionPane.showMessageDialog(loginView, "Login Success");
 
@@ -78,10 +83,14 @@ ResetPassword resetPass=new ResetPassword();
         }
     }
     
-    public UserData getExsistingUser(){
+    
+    
+    public UserData getExistingUser(){
   return existingUser;
   
   }
+    
+    
     class RedirectToRegister implements  MouseListener {
         
         

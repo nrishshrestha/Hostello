@@ -55,6 +55,8 @@ public class RegisterController {
             UserData userRegister = new UserData(name, email, password,"warden");
 
             boolean success = userDao.register(userRegister);
+            
+            
             if (success) {
                 JOptionPane.showMessageDialog(registerView, "Registration successful!");
                 close();
