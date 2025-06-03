@@ -10,18 +10,32 @@ package model;
  */
 //This class will carry data from the view (GUI) to the controller and DAO.
 public class UserData {
+    private int user_id;
     private String username;
     private String email;
     private String password;
     private String role;
 
     public UserData(String username, String email, String password, String role) {
+        
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+    }
+    public UserData(int user_id,String username, String email, String password, String role) {
+        this.user_id=user_id;
         this.username = username;
         this.email = email;
         this.password = password;
         this.role = role;
     }
 
+    public int getUserId() {
+        return user_id;
+    }
+    
+    
     public String getUsername() {
         return username;
     }
@@ -53,4 +67,6 @@ public class UserData {
     public void setRole(String role) {
         this.role = role;
     }
-}
+   
+  }
+
