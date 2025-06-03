@@ -62,16 +62,15 @@ public JButton getCheckoutButton(){
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         updateRoomButton = new javax.swing.JButton();
-        occupantNameField1 = new javax.swing.JTextField();
+        roomTypefield = new javax.swing.JTextField();
         roomimage = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        occupantNameField2 = new javax.swing.JTextField();
-        occupantNameField4 = new javax.swing.JTextField();
+        costPerMonthField = new javax.swing.JTextField();
+        roomNumberfield = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(650, 400));
         setMinimumSize(new java.awt.Dimension(650, 400));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -133,13 +132,13 @@ public JButton getCheckoutButton(){
         });
         getContentPane().add(updateRoomButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 150, 40));
 
-        occupantNameField1.setForeground(java.awt.Color.lightGray);
-        occupantNameField1.addActionListener(new java.awt.event.ActionListener() {
+        roomTypefield.setForeground(java.awt.Color.lightGray);
+        roomTypefield.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                occupantNameField1ActionPerformed(evt);
+                roomTypefieldActionPerformed(evt);
             }
         });
-        getContentPane().add(occupantNameField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 120, -1));
+        getContentPane().add(roomTypefield, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 120, -1));
 
         roomimage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagepicker/room.png"))); // NOI18N
         roomimage.setText("jLabel2");
@@ -160,21 +159,21 @@ public JButton getCheckoutButton(){
         jLabel3.setText("Room status: ");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
 
-        occupantNameField2.setForeground(java.awt.Color.lightGray);
-        occupantNameField2.addActionListener(new java.awt.event.ActionListener() {
+        costPerMonthField.setForeground(java.awt.Color.lightGray);
+        costPerMonthField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                occupantNameField2ActionPerformed(evt);
+                costPerMonthFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(occupantNameField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 120, -1));
+        getContentPane().add(costPerMonthField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 120, -1));
 
-        occupantNameField4.setForeground(java.awt.Color.lightGray);
-        occupantNameField4.addActionListener(new java.awt.event.ActionListener() {
+        roomNumberfield.setForeground(java.awt.Color.lightGray);
+        roomNumberfield.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                occupantNameField4ActionPerformed(evt);
+                roomNumberfieldActionPerformed(evt);
             }
         });
-        getContentPane().add(occupantNameField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 120, -1));
+        getContentPane().add(roomNumberfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 120, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -196,17 +195,17 @@ public JButton getCheckoutButton(){
         // TODO add your handling code here:
     }//GEN-LAST:event_checkoutButtonActionPerformed
 
-    private void occupantNameField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_occupantNameField1ActionPerformed
+    private void roomTypefieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roomTypefieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_occupantNameField1ActionPerformed
+    }//GEN-LAST:event_roomTypefieldActionPerformed
 
-    private void occupantNameField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_occupantNameField2ActionPerformed
+    private void costPerMonthFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_costPerMonthFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_occupantNameField2ActionPerformed
+    }//GEN-LAST:event_costPerMonthFieldActionPerformed
 
-    private void occupantNameField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_occupantNameField4ActionPerformed
+    private void roomNumberfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roomNumberfieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_occupantNameField4ActionPerformed
+    }//GEN-LAST:event_roomNumberfieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,16 +248,16 @@ public JButton getCheckoutButton(){
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignRoomButton;
     private javax.swing.JButton checkoutButton;
+    private javax.swing.JTextField costPerMonthField;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField occupantNameField1;
-    private javax.swing.JTextField occupantNameField2;
-    private javax.swing.JTextField occupantNameField4;
+    private javax.swing.JTextField roomNumberfield;
     private javax.swing.JComboBox<String> roomStatusComboBox;
+    private javax.swing.JTextField roomTypefield;
     private javax.swing.JLabel roomimage;
     private javax.swing.JButton updateRoomButton;
     private javax.swing.JLabel welcomeLabel;
