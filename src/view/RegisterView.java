@@ -12,8 +12,8 @@ import javax.swing.JLabel;
  * @author ACER
  */
 public class RegisterView extends javax.swing.JFrame {
-
-    /**
+    boolean isVisible= false;
+        /**
      * Creates new form RegisterView
      */
     public RegisterView() {
@@ -56,44 +56,68 @@ public class RegisterView extends javax.swing.JFrame {
         passwordLabel = new javax.swing.JLabel();
         passwordField = new javax.swing.JPasswordField();
         redirectLogin = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        ShowHideButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        TitleLable.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
+        TitleLable.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         TitleLable.setText("SignUp");
-        getContentPane().add(TitleLable, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 140, 70));
+        getContentPane().add(TitleLable, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, 90, 70));
 
-        nameLabel.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        nameLabel.setFont(new java.awt.Font("SansSerif", 0, 10)); // NOI18N
         nameLabel.setText("Name: ");
-        getContentPane().add(nameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 120, -1, -1));
+        getContentPane().add(nameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, -1, 20));
 
-        registerButton.setBackground(new java.awt.Color(0, 102, 102));
+        registerButton.setBackground(new java.awt.Color(196, 213, 151));
         registerButton.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        registerButton.setForeground(new java.awt.Color(255, 255, 255));
         registerButton.setText("Register");
         registerButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(registerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 260, -1, -1));
-        getContentPane().add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 120, 200, 30));
+        getContentPane().add(registerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, -1, -1));
+        getContentPane().add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 200, 30));
 
-        emailLabel.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        emailLabel.setFont(new java.awt.Font("SansSerif", 0, 10)); // NOI18N
         emailLabel.setText("Email: ");
-        getContentPane().add(emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, -1, -1));
-        getContentPane().add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 160, 200, 30));
+        getContentPane().add(emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, -1, 20));
+        getContentPane().add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 200, 30));
 
-        passwordLabel.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        passwordLabel.setFont(new java.awt.Font("SansSerif", 0, 10)); // NOI18N
         passwordLabel.setText("Password: ");
-        getContentPane().add(passwordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 210, -1, -1));
-        getContentPane().add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 210, 200, 30));
+        getContentPane().add(passwordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, -1, 20));
+        getContentPane().add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 200, 30));
 
-        redirectLogin.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        redirectLogin.setForeground(new java.awt.Color(0, 153, 255));
-        redirectLogin.setText("If already have an account go to Login.");
+        redirectLogin.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        redirectLogin.setForeground(new java.awt.Color(51, 102, 255));
+        redirectLogin.setText("Already have an account? Login.");
         redirectLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(redirectLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 330, -1, -1));
+        getContentPane().add(redirectLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagepicker/be.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 400));
+
+        ShowHideButton.setText("Show");
+        ShowHideButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ShowHideButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ShowHideButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, -1, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ShowHideButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowHideButtonActionPerformed
+        // TODO add your handling code here:
+        if(isVisible){
+            passwordField.setEchoChar('*');
+            ShowHideButton.setText("Show");
+        } else{
+            passwordField.setEchoChar((char) 0);
+            ShowHideButton.setText("Hide");
+        }
+        isVisible= !isVisible;
+    }//GEN-LAST:event_ShowHideButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -108,9 +132,11 @@ public class RegisterView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ShowHideButton;
     private javax.swing.JLabel TitleLable;
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel emailLabel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField nameField;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JPasswordField passwordField;
