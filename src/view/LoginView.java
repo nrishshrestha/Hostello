@@ -16,7 +16,7 @@ import javax.swing.JTextField;
  * @author ACER
  */
 public class LoginView extends javax.swing.JFrame {
-   
+   boolean isVisible= false;
     /**
      * Creates new form LoginView
      */
@@ -62,32 +62,66 @@ public JLabel getForgotPassword() {
         jLabel4 = new javax.swing.JLabel();
         pwdPassword = new javax.swing.JPasswordField();
         forgotPasswordLabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        ShowHideButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblEmail.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         lblEmail.setText("Email: ");
-        getContentPane().add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 160, 70, 20));
+        getContentPane().add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 40, 10));
 
+        btnLogin.setBackground(new java.awt.Color(196, 213, 151));
         btnLogin.setText("Login");
-        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 240, -1, -1));
-        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 150, 170, 30));
+        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, -1, -1));
+        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 190, 30));
 
+        lblPassword.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         lblPassword.setText("Password: ");
-        getContentPane().add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 210, 90, 20));
+        getContentPane().add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, -1, 20));
 
-        lblRedirectRegister.setText("\"Don't have an account? Register here\"\\");
-            getContentPane().add(lblRedirectRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 330, -1, -1));
+        lblRedirectRegister.setText("Don't have an account? Sign up.");
+        getContentPane().add(lblRedirectRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, -1, -1));
 
-            jLabel4.setText("Login");
-            getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 40, -1, -1));
-            getContentPane().add(pwdPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 200, 170, 30));
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel4.setText("Login");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 70, -1, -1));
+        getContentPane().add(pwdPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, 190, 30));
 
-            forgotPasswordLabel.setText("Reset Password");
-            getContentPane().add(forgotPasswordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 290, -1, -1));
+        forgotPasswordLabel.setForeground(new java.awt.Color(51, 102, 255));
+        forgotPasswordLabel.setText("Reset Password?");
+        getContentPane().add(forgotPasswordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 110, -1));
 
-            pack();
-        }// </editor-fold>//GEN-END:initComponents
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagepicker/hos.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 180, 130));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagepicker/grey.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 400));
+
+        ShowHideButton.setText("Show");
+        ShowHideButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ShowHideButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ShowHideButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 190, -1, 20));
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void ShowHideButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowHideButtonActionPerformed
+        // TODO add your handling code here:
+        if(isVisible){
+            pwdPassword.setEchoChar('*');
+            ShowHideButton.setText("Show");
+        } else{
+            pwdPassword.setEchoChar((char) 0);
+            ShowHideButton.setText("Hide");
+        }
+        isVisible= !isVisible;
+    }//GEN-LAST:event_ShowHideButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -125,8 +159,11 @@ public JLabel getForgotPassword() {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ShowHideButton;
     private javax.swing.JButton btnLogin;
     private javax.swing.JLabel forgotPasswordLabel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblPassword;
