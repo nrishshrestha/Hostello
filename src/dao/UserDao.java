@@ -99,7 +99,7 @@ mySql.closeConnection(conn);
     
     
     public UserData login(String email, String password) {
-        String query = "SELECT username, email, password, role FROM users WHERE email = ? AND password = ?";
+        String query = "SELECT user_id, username, email, password, role FROM users WHERE email = ? AND password = ?";
         Connection conn = mySql.openConnection();
         try {
             PreparedStatement stmt = conn.prepareStatement(query);
