@@ -3,15 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Hostello/src/view/AdminDashboardView.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Hostello/src/view/LoginView.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Hostello/src/view/WardenDashboardView.java</file>
-=======
             <file>file:/C:/Users/ACER/Documents/NetBeansProjects/Hostello/src/view/LoginView.java</file>
             <file>file:/C:/Users/ACER/Documents/NetBeansProjects/Hostello/src/controller/AdminDashboardController.java</file>
             <file>file:/C:/Users/ACER/Documents/NetBeansProjects/Hostello/src/controller/WardenDashboardController.java</file>
->>>>>>> b079e3dee41faf8de37e7ff4d2a840266260c1fd
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/Hostello/src/dao/UserDao.java</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/Hostello/src/controller/LoginController.java</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/Hostello/src/controller/RegisterController.java</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/Hostello/src/model/UserData.java</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/Hostello/src/model/ResetPasswordRequest.java</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/Hostello/src/view/WardenDashboardView.java</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/Hostello/src/view/RegisterView.java</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/Hostello/src/view/AdminDashboardView.java</file>
         </group>
     </open-files>
 </project-private>
