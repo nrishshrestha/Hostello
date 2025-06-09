@@ -99,7 +99,7 @@ mySql.closeConnection(conn);
     
     
     public UserData login(String email, String password) {
-        String query = "SELECT username, email, password, role FROM users WHERE email = ? AND password = ?";
+        String query = "SELECT user_id, username, email, password, role FROM users WHERE email = ? AND password = ?";
         Connection conn = mySql.openConnection();
         try {
             PreparedStatement stmt = conn.prepareStatement(query);
@@ -110,12 +110,16 @@ mySql.closeConnection(conn);
 
             if (rs.next()) {
                 // Get data from result
+                int user_id=rs.getInt("user_id");
                 String username = rs.getString("username");
                 String userEmail = rs.getString("email");
                 String userPassword = rs.getString("password");
                 String role = rs.getString("role");
+                
 
-                return new UserData(username, userEmail, userPassword, role);
+                return new UserData(user_id,username, userEmail, userPassword, role);
+                
+                
             } else {
                 return null; // no user found
             }
