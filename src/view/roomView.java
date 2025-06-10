@@ -14,29 +14,64 @@ import javax.swing.JTextField;
  *
  * @author ACER
  */
-public class roomView extends javax.swing.JFrame {
+public class RoomView extends javax.swing.JFrame {
 
 
     /**
      * Creates new form AdminDashboardView
      */
-    public roomView() {
+    public RoomView() {
         initComponents();
         this.setSize(new java.awt.Dimension(650,400));
     }
 public JComboBox<String> getRoomStatusComboBox() {
         return roomStatusComboBox;
     }
+public void setRoomStatusOptions(String[] options) {
+    roomStatusComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(options));
+}
 
 public JButton getAssignRoomButton(){
     return assignRoomButton;
+}
+public void setAssignRoomButtonEnabled(boolean enabled) {
+    assignRoomButton.setEnabled(enabled);
 }
 
 public JButton getUpdateRoomButton(){
     return updateRoomButton;
 }
+public void setUpdateButtonEnabled(boolean enabled) {
+    updateRoomButton.setEnabled(enabled);
+}
+public void setUpdateButtonAction(ActionListener action) {
+    updateRoomButton.addActionListener(action);
+}
+public void setUpdateButtonVisible(boolean visible) {
+    updateRoomButton.setVisible(visible);
+}
 public JButton getCheckoutButton(){
     return checkoutButton;
+}
+public void setCheckoutButtonText(String text) {
+    checkoutButton.setText(text);
+}
+
+
+public void setRoomNumber(String number) {
+    roomNumberfield.setText(number);
+}
+
+public void setRoomType(String type) {
+    roomTypefield.setText(type);
+}
+
+public void setCostPerMonth(String cost) {
+    costPerMonthField.setText(cost);
+}
+
+public void setRoomStatus(String status) {
+    roomStatusComboBox.setSelectedItem(status);
 }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -214,14 +249,18 @@ public JButton getCheckoutButton(){
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(roomView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RoomView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(roomView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RoomView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(roomView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RoomView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(roomView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RoomView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -230,7 +269,7 @@ public JButton getCheckoutButton(){
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new roomView().setVisible(true);
+                new RoomView().setVisible(true);
             }
         });
     }
