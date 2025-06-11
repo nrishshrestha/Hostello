@@ -62,7 +62,14 @@ public class UserData {
     public void setPassword(String password) {
         this.password = password;
     }
-
+    
+    public String getProfilePicture(){
+        return ProfilePicture;
+    }
+    
+    public void setProfilePicture(String ProfilePicture){
+        this.ProfilePicture = ProfilePicture;
+    }
     public String getRole() {
         return role;
     }
@@ -74,4 +81,3 @@ public class UserData {
         this.ProfilePicture= ProfilePicture;
     }
   }
-
