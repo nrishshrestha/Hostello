@@ -77,7 +77,4 @@ public class UserData {
     public void setRole(String role) {
         this.role = role;
     }
-    public void ProfilePicture(String ProfilePicture){
-        this.ProfilePicture= ProfilePicture;
-    }
   }
