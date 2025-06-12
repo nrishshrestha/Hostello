@@ -36,6 +36,8 @@ public class WardenDashboardView extends javax.swing.JFrame {
         LogoutBtn = new javax.swing.JButton();
         label = new javax.swing.JLabel();
         welcomeLabel = new javax.swing.JLabel();
+        AddUser = new javax.swing.JButton();
+        DeleteUser = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -46,13 +48,23 @@ public class WardenDashboardView extends javax.swing.JFrame {
                 LogoutBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(LogoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 30, -1, -1));
+        getContentPane().add(LogoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, -1, -1));
 
         label.setText("warden Dashboard");
-        getContentPane().add(label, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 190, 60));
+        getContentPane().add(label, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 190, 60));
 
         welcomeLabel.setText("jLabel1");
-        getContentPane().add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, -1, -1));
+        getContentPane().add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, -1, -1));
+
+        AddUser.setBackground(new java.awt.Color(153, 255, 153));
+        AddUser.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        AddUser.setText("Add");
+        getContentPane().add(AddUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 130, -1, -1));
+
+        DeleteUser.setBackground(new java.awt.Color(255, 102, 102));
+        DeleteUser.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        DeleteUser.setText("Delete");
+        getContentPane().add(DeleteUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 170, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -99,8 +111,17 @@ return welcomeLabel;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddUser;
+    private javax.swing.JButton DeleteUser;
     private javax.swing.JButton LogoutBtn;
     private javax.swing.JLabel label;
     private javax.swing.JLabel welcomeLabel;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getAddUser(){
+        return AddUser;
+    }
+    public JButton getDeleteUser(){
+        return DeleteUser;
+    }
 }
