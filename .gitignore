@@ -1,3 +1,7 @@
 /Hostello_App_1/nbproject/private/
 /dist/
 /build/build/classes/
+build/
+nbproject/private/
+src/view/RoomViewFix.java
+src/view/RoomViewFix.form
