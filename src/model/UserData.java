@@ -17,7 +17,7 @@ public class UserData {
     private String role;
     private String ProfilePicture;
 
-    public UserData(String username, String email, String password, String role) {
+    public UserData(String username, String email, String password, String role, String ProfilePicture) {
         
         this.username = username;
         this.email = email;
@@ -25,7 +25,7 @@ public class UserData {
         this.role = role;
         this.ProfilePicture= ProfilePicture;
     }
-    public UserData(int user_id,String username, String email, String password, String role) {
+    public UserData(int user_id,String username, String email, String password, String role, String ProfilePicture) {
         this.user_id=user_id;
         this.username = username;
         this.email = email;
@@ -62,7 +62,14 @@ public class UserData {
     public void setPassword(String password) {
         this.password = password;
     }
-
+    
+    public String getProfilePicture(){
+        return ProfilePicture;
+    }
+    
+    public void setProfilePicture(String ProfilePicture){
+        this.ProfilePicture = ProfilePicture;
+    }
     public String getRole() {
         return role;
     }
@@ -74,4 +81,3 @@ public class UserData {
         this.ProfilePicture= ProfilePicture;
     }
   }
-
