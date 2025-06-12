@@ -16,50 +16,56 @@ public class RoomData {
     private Float roomCost;
     private String roomStatus;
     private int userId;
+    
     public RoomData(int roomId, String roomNo, String roomType, Float roomCost, String roomStatus, int userId){
-        this.roomId= roomId;
-        this.roomNo= roomNo;
-        this.roomCost= roomCost;
-        this.roomStatus= roomStatus;
-        this.userId= userId;
+        this.roomId = roomId;
+        this.roomNo = roomNo;
+        this.roomType = roomType;
+        this.roomCost = roomCost;
+        this.roomStatus = roomStatus;
+        this.userId = userId;
     }
-    public void setRoomId(int roomId){
-        this.roomId= roomId;
+    
+    // Getters and Setters
+    public int getRoomId() {
+        return roomId;
     }
-    public void setRoomNo(String roomNo){
-        this.roomNo=roomNo;
+    public void setRoomId(int roomId) {
+        this.roomId = roomId;
     }
-    public void setRoomType(String roomType){
-        this.roomType=roomType;
-    }
-    public void setRoomCost(Float roomCost){
-        this.roomCost= roomCost;
-    }
-    public void setRoomStatus(String roomStatus){
-        this.roomStatus= roomStatus;
-    }
-    public void setUserId(int userId){
-        this.userId= userId;
-    }
-    public int getRoomId(){
-    return roomId;
-    }
-    public String getRoomNo(){
+    
+    public String getRoomNo() {
         return roomNo;
     }
-    public String getRoomType(){
+    public void setRoomNo(String roomNo) {
+        this.roomNo = roomNo;
+    }
+    
+    public String getRoomType() {
         return roomType;
     }
-    public Float getRoomCost(){
+    public void setRoomType(String roomType) {
+        this.roomType = roomType;
+    }
+    
+    public Float getRoomCost() {
         return roomCost;
     }
-    public String getRoomStatus(){
+    public void setRoomCost(Float roomCost) {
+        this.roomCost = roomCost;
+    }
+    
+    public String getRoomStatus() {
         return roomStatus;
     }
-    public int getUserId(){
-        return userId;
+    public void setRoomStatus(String roomStatus) {
+        this.roomStatus = roomStatus;
     }
     
-
-    
+    public int getUserId() {
+        return userId;
+    }
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 }

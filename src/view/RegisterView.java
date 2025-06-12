@@ -91,7 +91,7 @@ public class RegisterView extends javax.swing.JFrame {
         redirectLogin.setForeground(new java.awt.Color(51, 102, 255));
         redirectLogin.setText("Already have an account? Login.");
         redirectLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(redirectLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, -1, -1));
+        getContentPane().add(redirectLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, -1, 10));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagepicker/be.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 400));
