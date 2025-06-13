@@ -21,6 +21,10 @@ public class RoomData {
          this.room_status= room_status;
          this.user_id= user_id;
      }
+     
+     public RoomData (int room_id){
+         this.room_id= room_id;
+     }
 
     
 }
