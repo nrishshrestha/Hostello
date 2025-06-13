@@ -61,6 +61,10 @@ public class RoomData {
      public void setRoomCost(double room_cost){
          this.room_cost= room_cost;
      }
+     
+     public String getRoomStatus(){
+         return room_status;
+     }
             
 
     
