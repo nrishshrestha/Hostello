@@ -14,8 +14,9 @@ public class RoomData {
     
      public RoomData() {}
      
-     public RoomData(String room_no){
+     public RoomData(String room_no, String room_type){
          this.room_no= room_no;
+         this.room_type= room_type;
      }
 
     
