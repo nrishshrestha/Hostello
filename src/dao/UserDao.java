@@ -84,19 +84,39 @@ return false;
 }finally{
 mySql.closeConnection(conn);
 }
-}
+}  
     
+ public UserData getUserById(int userId) {
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+String sql = "SELECT * FROM users WHERE user_id = ?";
+  Connection conn = mySql.openConnection();
+    try  {
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, userId);
+
+        ResultSet rs = stmt.executeQuery();
+        if (rs.next()) {
+            int user_id=rs.getInt("user_id");
+                String username = rs.getString("username");
+                String userEmail = rs.getString("email");
+                String userPassword = rs.getString("password");
+                String role = rs.getString("role");
+            // Set other fields as needed
+            return new UserData(user_id,username, userEmail, userPassword, role);
+        }
+        else {
+                return null; // no user found
+            }
+
+    } catch (Exception e) {
+        e.printStackTrace();
+   return null;}
+         finally {
+            mySql.closeConnection(conn);
+        }
+ }
+ 
+   
     
     public UserData login(String email, String password) {
         String query = "SELECT user_id, username, email, password, role FROM users WHERE email = ? AND password = ?";

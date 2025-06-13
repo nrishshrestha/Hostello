@@ -24,6 +24,13 @@ public class WardenDashboardView extends javax.swing.JFrame {
    public JButton getLogoutButton() {
         return LogoutBtn;
     }
+   
+   
+   public JButton getRoomButton(){
+   return roomButton;
+   }
+   
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,23 +43,44 @@ public class WardenDashboardView extends javax.swing.JFrame {
         LogoutBtn = new javax.swing.JButton();
         label = new javax.swing.JLabel();
         welcomeLabel = new javax.swing.JLabel();
+        jToolBar1 = new javax.swing.JToolBar();
+        jLabel1 = new javax.swing.JLabel();
+        roomButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        LogoutBtn.setBackground(new java.awt.Color(153, 153, 153));
+        LogoutBtn.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        LogoutBtn.setForeground(new java.awt.Color(51, 51, 255));
         LogoutBtn.setText("Logout");
         LogoutBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogoutBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(LogoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 30, -1, -1));
+        getContentPane().add(LogoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, -1, -1));
 
-        label.setText("warden Dashboard");
-        getContentPane().add(label, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 190, 60));
+        label.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
+        label.setText("Warden Dashboard");
+        getContentPane().add(label, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 350, 60));
 
-        welcomeLabel.setText("jLabel1");
-        getContentPane().add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, -1, -1));
+        welcomeLabel.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        welcomeLabel.setText("..");
+        getContentPane().add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 370, -1));
+
+        jToolBar1.setRollover(true);
+        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagepicker/room.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, -50, 470, 520));
+
+        roomButton.setBackground(new java.awt.Color(255, 0, 51));
+        roomButton.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        roomButton.setForeground(new java.awt.Color(255, 255, 255));
+        roomButton.setText("Rooms");
+        roomButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(roomButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 170, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -100,7 +128,12 @@ return welcomeLabel;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LogoutBtn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JLabel label;
+    private javax.swing.JButton roomButton;
     private javax.swing.JLabel welcomeLabel;
     // End of variables declaration//GEN-END:variables
+
+   
 }
