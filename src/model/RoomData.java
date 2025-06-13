@@ -49,6 +49,10 @@ public class RoomData {
      public String getRoomType(){
          return room_type;
      }
+     
+     public void setRoomType(String room_type){
+         this.room_type= room_type;
+     }
              
 
     
