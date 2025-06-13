@@ -31,6 +31,10 @@ public class RoomData {
          this.user_id= user_id;
 
      }
+     
+     public int getRoomId(){
+         return room_id;
+     }
 
     
 }
