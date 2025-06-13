@@ -82,6 +82,7 @@ public JLabel getForgotPassword() {
         lblPassword.setText("Password: ");
         getContentPane().add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, -1, 20));
 
+        lblRedirectRegister.setForeground(new java.awt.Color(51, 102, 255));
         lblRedirectRegister.setText("Don't have an account? Sign up.");
         getContentPane().add(lblRedirectRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, -1, -1));
 

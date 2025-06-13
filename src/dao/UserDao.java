@@ -84,18 +84,7 @@ return false;
 }finally{
 mySql.closeConnection(conn);
 }
-}
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+}  
     
     
     public UserData login(String email, String password) {
