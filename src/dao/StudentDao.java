@@ -4,11 +4,15 @@
  */
 package dao;
 
+import database.DbConnection;
+import database.MySqlConnection;
+
 /**
  *
  * @author User
  */
 public class StudentDao {
+    private final DbConnection dbconnection = new MySqlConnection();
     
     
     
