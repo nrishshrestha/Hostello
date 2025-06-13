@@ -69,6 +69,10 @@ public class RoomData {
      public void setRoomStatus(String room_status){
          this.room_status= room_status;
      }
+     public int getUserId() {
+        return user_id;
+    }
+
             
 
     
