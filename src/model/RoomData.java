@@ -17,8 +17,8 @@ public class RoomData {
     private String roomStatus;
     private int userId;
     
-    public RoomData(int roomId, String roomNo, String roomType, Float roomCost, String roomStatus, int userId){
-        this.roomId = roomId;
+    public RoomData(String roomNo, String roomType, Float roomCost, String roomStatus, int userId){
+  
         this.roomNo = roomNo;
         this.roomType = roomType;
         this.roomCost = roomCost;
