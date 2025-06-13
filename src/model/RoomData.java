@@ -38,6 +38,9 @@ public class RoomData {
      public void setRoomId( int room_id){
          this.room_id= room_id;
      }
+     public String getRoomNo(){
+         return room_no;
+     }
 
     
 }
