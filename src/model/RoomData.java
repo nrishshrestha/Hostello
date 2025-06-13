@@ -41,6 +41,10 @@ public class RoomData {
      public String getRoomNo(){
          return room_no;
      }
+     
+     public void setRoomNo(String room_no){
+         this.room_no= room_no;
+     }
 
     
 }
