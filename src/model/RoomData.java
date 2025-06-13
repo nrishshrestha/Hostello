@@ -57,7 +57,11 @@ public class RoomData {
      public double getRoomCost(){
          return room_cost;
      }
-             
+     
+     public void setRoomCost(double room_cost){
+         this.room_cost= room_cost;
+     }
+            
 
     
 }
