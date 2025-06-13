@@ -13,6 +13,10 @@ public class RoomData {
     private int user_id; // warden_id
     
      public RoomData() {}
+     
+     public RoomData(String room_no){
+         this.room_no= room_no;
+     }
 
     
 }
