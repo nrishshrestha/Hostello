@@ -35,6 +35,9 @@ public class RoomData {
      public int getRoomId(){
          return room_id;
      }
+     public void setRoomId( int room_id){
+         this.room_id= room_id;
+     }
 
     
 }
