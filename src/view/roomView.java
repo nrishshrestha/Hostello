@@ -70,18 +70,21 @@ public String getSelectedRoomStatus() {
         typeComboBox = new javax.swing.JComboBox<>();
         statusComboBox = new javax.swing.JComboBox<>();
         backButton = new javax.swing.JButton();
+        RoomBG = new javax.swing.JLabel();
+        AllRoomsLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        addButton.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        addButton.setBackground(new java.awt.Color(204, 255, 204));
+        addButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
         addButton.setText("Add ");
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 110, 30));
+        getContentPane().add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 90, -1));
 
         roomTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -101,11 +104,11 @@ public String getSelectedRoomStatus() {
             roomTable.getColumnModel().getColumn(0).setMaxWidth(0);
         }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, 310, 110));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 320, 120));
 
-        statuslabel.setFont(new java.awt.Font("Sans Serif Collection", 1, 18)); // NOI18N
+        statuslabel.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
         statuslabel.setText("Status :");
-        getContentPane().add(statuslabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 110, 30));
+        getContentPane().add(statuslabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 130, 40));
 
         roomNoField.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         roomNoField.addActionListener(new java.awt.event.ActionListener() {
@@ -113,19 +116,19 @@ public String getSelectedRoomStatus() {
                 roomNoFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(roomNoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 150, -1));
+        getContentPane().add(roomNoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 100, 40));
 
-        RoomNoLabel1.setFont(new java.awt.Font("Sans Serif Collection", 1, 18)); // NOI18N
+        RoomNoLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
         RoomNoLabel1.setText("Room No : ");
-        getContentPane().add(RoomNoLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 110, 20));
+        getContentPane().add(RoomNoLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 140, 30));
 
-        RoomTypeLabel.setFont(new java.awt.Font("Sans Serif Collection", 1, 18)); // NOI18N
+        RoomTypeLabel.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
         RoomTypeLabel.setText("Room Type :");
-        getContentPane().add(RoomTypeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 110, 30));
+        getContentPane().add(RoomTypeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 150, 30));
 
-        RoomNoLabel3.setFont(new java.awt.Font("Sans Serif Collection", 1, 18)); // NOI18N
+        RoomNoLabel3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
         RoomNoLabel3.setText("Cost :");
-        getContentPane().add(RoomNoLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 80, 30));
+        getContentPane().add(RoomNoLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 80, 30));
 
         costField.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         costField.addActionListener(new java.awt.event.ActionListener() {
@@ -133,7 +136,7 @@ public String getSelectedRoomStatus() {
                 costFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(costField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 150, 30));
+        getContentPane().add(costField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 150, 40));
 
         typeComboBox.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         typeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1-Seater", "2-Seater", "3-Seater", "4-Seater" }));
@@ -143,11 +146,11 @@ public String getSelectedRoomStatus() {
                 typeComboBoxActionPerformed(evt);
             }
         });
-        getContentPane().add(typeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 140, -1));
+        getContentPane().add(typeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 150, 40));
 
         statusComboBox.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         statusComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "available", "occupied" }));
-        getContentPane().add(statusComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 252, 150, 30));
+        getContentPane().add(statusComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 150, 50));
 
         backButton.setText("⬅️");
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -155,7 +158,14 @@ public String getSelectedRoomStatus() {
                 backButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 130, 30));
+        getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+
+        RoomBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagepicker/room.png"))); // NOI18N
+        getContentPane().add(RoomBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, -1, -1));
+
+        AllRoomsLabel.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
+        AllRoomsLabel.setText("All Rooms");
+        getContentPane().add(AllRoomsLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -216,6 +226,8 @@ public String getSelectedRoomStatus() {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AllRoomsLabel;
+    private javax.swing.JLabel RoomBG;
     private javax.swing.JLabel RoomNoLabel1;
     private javax.swing.JLabel RoomNoLabel3;
     private javax.swing.JLabel RoomTypeLabel;
