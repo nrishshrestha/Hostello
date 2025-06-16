@@ -158,7 +158,7 @@ public String getSelectedRoomStatus() {
                 backButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+        getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 50));
 
         RoomBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagepicker/room.png"))); // NOI18N
         getContentPane().add(RoomBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, -1, -1));
