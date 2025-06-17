@@ -1,4 +1,11 @@
-/Hostello_App_1/nbproject/
-/dist/
-/build/build/classes/
-/build/
+# Ignore NetBeans private configs
+nbproject/private/
+Hostello_App_1/nbproject/
+
+# Ignore build artifacts
+build/
+build/build/classes/
+dist/
+
+# Ignore compiled classes
+*.class
