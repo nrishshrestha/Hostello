@@ -18,12 +18,13 @@ public class UserData {
     private String ProfilePicture;
 
     public UserData(String username, String email, String password, String role) {
-        
+      //profile picture should be deleted
+      
         this.username = username;
         this.email = email;
         this.password = password;
         this.role = role;
-        this.ProfilePicture= ProfilePicture;
+        
     }
     public UserData(int user_id,String username, String email, String password, String role) {
         this.user_id=user_id;
@@ -31,11 +32,18 @@ public class UserData {
         this.email = email;
         this.password = password;
         this.role = role;
-        this.ProfilePicture= ProfilePicture;
+        
+    }
+     public UserData() {
+        
     }
 
     public int getUserId() {
         return user_id;
+    }
+    
+    public void setUserId(int user_id){
+    this.user_id=user_id;
     }
     
     
@@ -62,7 +70,14 @@ public class UserData {
     public void setPassword(String password) {
         this.password = password;
     }
-
+    
+    public String getProfilePicture(){
+        return ProfilePicture;
+    }
+    
+    public void setProfilePicture(String ProfilePicture){
+        this.ProfilePicture = ProfilePicture;
+    }
     public String getRole() {
         return role;
     }
@@ -70,8 +85,4 @@ public class UserData {
     public void setRole(String role) {
         this.role = role;
     }
-    public void ProfilePicture(String ProfilePicture){
-        this.ProfilePicture= ProfilePicture;
-    }
   }
-
