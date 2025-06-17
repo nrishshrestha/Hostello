@@ -28,4 +28,13 @@ public class UserDaoTest {
         boolean notExists = userDao.checkEmail(nonExistentEmail);
         assertFalse(notExists);
     }
+    @Test
+    public void testResetPassword() {
+        ResetPasswordRequest request = new ResetPasswordRequest();
+        request.setEmail("test@test.com");
+        request.setPassword("newpassword123");
+        
+        boolean result = userDao.resetPassword(request);
+        assertTrue(result);
+    }
 }
