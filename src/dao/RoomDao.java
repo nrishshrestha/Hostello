@@ -4,117 +4,121 @@
  */
 package dao;
 
-import java.sql.Connection;
-import database.MySqlConnection;
 import model.RoomData;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import database.MySqlConnection;
+
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import database.MySqlConnection;
 
-/**
- *
- * @author user
- */
+import java.sql.ResultSet;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
 public class RoomDao {
-    private MySqlConnection mySql = new MySqlConnection();
+MySqlConnection mySql = new MySqlConnection();
+    // Create a new room record
+
+// Fetch available rooms only (status = 'available')
+public List<String> getAvailableRoomNumbersByWarden(int userId) {
+    List<String> roomNos = new ArrayList<>();
+    String sql = "SELECT room_no FROM rooms WHERE room_status = 'available' AND user_id = ?";
+    Connection conn = mySql.openConnection();
+    try {
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, userId);
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()) {
+            roomNos.add(rs.getString("room_no"));
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return roomNos;
+}
 
     public boolean addRoom(RoomData room) {
-        String sql = "INSERT INTO rooms (room_number, room_type, room_status) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO rooms (room_no, room_type, room_cost, room_status, user_id) VALUES (?, ?, ?, ?, ?)";
         Connection conn = mySql.openConnection();
         try {
             PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, room.getRoomNumber());
+        
+            stmt.setString(1, room.getRoomNo());
             stmt.setString(2, room.getRoomType());
-            stmt.setString(3, room.getRoomStatus());
-            return stmt.executeUpdate() > 0;
-        } catch (Exception e) {
-            System.err.println("Error in addRoom: " + e.getMessage());
-            return false;
-        } finally {
-            mySql.closeConnection(conn);
-        }
-    }    
-    /**
-     *
-     * @param roomNumber
-     * @return
-     */
-    public RoomData getRoomByNumber(String roomNumber) {
-        String sql = "SELECT room_number,room_type,room_status FROM rooms WHERE room_number=?";
-        Connection conn = mySql.openConnection();
-        try{
-            PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1,roomNumber);
-            ResultSet rs = stmt.executeQuery();
-            if(rs.next()) {
-            return new RoomData(
-                    rs.getString("room_number"),
-                    rs.getString("room_type"),
-                    rs.getString("room_status")
-            );
-        }
-        }catch (Exception e){
-            System.err.println("Error retriving room: "+e.getMessage());
-        }finally{
-            mySql.closeConnection(conn);
-        }
-        return null;
-    }
-    
+            stmt.setDouble(3, room.getRoomCost());
+            stmt.setString(4, room.getRoomStatus());
+            stmt.setInt(5, room.getUserId());
 
-    public List<RoomData> getAllRooms() {
-        String sql = "SELECT room_number, room_type, room_status FROM rooms";
+            int rows = stmt.executeUpdate();
+            return rows > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    // Retrieve all rooms for a given warden (user_id)
+    public List<RoomData> getRoomsByWarden(int userId) {
         List<RoomData> rooms = new ArrayList<>();
+        String sql = "SELECT * FROM rooms WHERE user_id = ?";
         Connection conn = mySql.openConnection();
         try {
-            PreparedStatement stmt = conn.prepareStatement(sql);
+             PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, userId);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                rooms.add(new RoomData(
-                        rs.getString("room_number"),
-                        rs.getString("room_type"),
-                        rs.getString("room_status")
-                ));
+                RoomData room = new RoomData();
+                room.setRoomId(rs.getInt("room_id"));
+                room.setRoomNo(rs.getString("room_no"));
+                room.setRoomType(rs.getString("room_type"));
+                room.setRoomCost(rs.getDouble("room_cost"));
+                room.setRoomStatus(rs.getString("room_status"));
+                room.setUserId(rs.getInt("user_id"));
+
+                rooms.add(room);
             }
-        } catch (Exception e) {
-            System.err.println("Error in getAllRooms: " + e.getMessage());
-        } finally {
-            mySql.closeConnection(conn);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return rooms;
     }
 
+    // Update existing room
     public boolean updateRoom(RoomData room) {
-        String sql = "UPDATE rooms SET room_type = ?, room_status = ? WHERE room_number = ?";
+        String sql = "UPDATE rooms SET room_no = ?, room_type = ?, room_cost = ?, room_status = ?, user_id = ? WHERE room_id = ?";
         Connection conn = mySql.openConnection();
-        boolean result = false;
-        try {
-            PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, room.getRoomType());
-            stmt.setString(2, room.getRoomStatus());
-            stmt.setString(3, room.getRoomNumber());
-            return stmt.executeUpdate() > 0;
-        } catch (Exception e) {
-            System.err.println("Error in updateRoom: " + e.getMessage());
-        } finally {
-            mySql.closeConnection(conn);
+      try {
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             
+            stmt.setString(1, room.getRoomNo());
+            stmt.setString(2, room.getRoomType());
+            stmt.setDouble(3, room.getRoomCost());
+            stmt.setString(4, room.getRoomStatus());
+            stmt.setInt(5, room.getUserId());
+            stmt.setInt(6, room.getRoomId());
+
+            int rows = stmt.executeUpdate();
+            return rows > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
         }
-        return result;
     }
 
-    public boolean deleteRoom(String roomNumber) {
-        String sql = "DELETE FROM rooms WHERE room_number = ?";
-        Connection conn = mySql.openConnection();
-        try {
-            PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, roomNumber);
-            return stmt.executeUpdate() > 0;
-        } catch (Exception e) {
-            System.err.println("Error in deleteRoom: " + e.getMessage());
+    // Delete a room by ID
+    public boolean deleteRoom(String roomNo) {
+        String sql = "DELETE FROM rooms WHERE room_no = ?";
+       Connection conn = mySql.openConnection(); 
+       try {
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             
+            stmt.setString(1, roomNo);
+            int rows = stmt.executeUpdate();
+            return rows > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
             return false;
-        } finally {
-            mySql.closeConnection(conn);
         }
     }
 }
