@@ -37,4 +37,14 @@ public class UserDaoTest {
         boolean result = userDao.resetPassword(request);
         assertTrue(result);
     }
+    
+    @Test
+    public void testLogin() {
+        UserData user = userDao.login("test@test.com", "password123");
+        assertNotNull(user);
+        assertEquals("test@test.com", user.getEmail());
+        
+        UserData invalidUser = userDao.login("wrong@email.com", "wrongpass");
+        assertNull(invalidUser);
+    }
 }
