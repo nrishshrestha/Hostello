@@ -82,4 +82,10 @@ public class RoomData {
         this.user_id = user_id;
     }
 
+<<<<<<< HEAD
+    public String getRoomStatus() { return roomStatus; }
+    public void setRoomStatus(String roomStatus) { this.roomStatus = roomStatus; }
 }
+=======
+}
+>>>>>>> main

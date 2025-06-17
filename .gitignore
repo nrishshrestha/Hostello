@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+/Hostello_App_1/nbproject/private/
+/dist/
+/build/build/classes/
+/nbproject/private/
+=======
 # Ignore NetBeans private configs
 nbproject/private/
 Hostello_App_1/nbproject/
@@ -9,3 +15,4 @@ dist/
 
 # Ignore compiled classes
 *.class
+>>>>>>> main
