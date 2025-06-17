@@ -37,24 +37,101 @@ return welcomeLabel;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        homeButton = new javax.swing.JButton();
+        settingsButton = new javax.swing.JButton();
+        paymentButton = new javax.swing.JButton();
+        inventoryButton = new javax.swing.JButton();
         LogoutBtn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        welcomeLabel = new javax.swing.JLabel();
+        userButton = new javax.swing.JButton();
+        addRoomButton = new javax.swing.JButton();
+        updateRoomStatus = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        LogoutBtn.setText("Logout");
-        getContentPane().add(LogoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(828, 79, -1, -1));
+        homeButton.setBackground(new java.awt.Color(153, 204, 255));
+        homeButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        homeButton.setText("Home");
+        getContentPane().add(homeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 110, 40));
 
-        jLabel1.setText("Admin Dashboard");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, 180, 100));
+        settingsButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        settingsButton.setText("Settings");
+        settingsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                settingsButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(settingsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 110, 40));
 
-        welcomeLabel.setText("jLabel2");
-        getContentPane().add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 290, -1, -1));
+        paymentButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        paymentButton.setText("Payment");
+        getContentPane().add(paymentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 110, 40));
+
+        inventoryButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
+        inventoryButton.setText("Inventory");
+        getContentPane().add(inventoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 110, 40));
+
+        LogoutBtn.setBackground(new java.awt.Color(204, 0, 51));
+        LogoutBtn.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
+        LogoutBtn.setForeground(new java.awt.Color(255, 255, 255));
+        LogoutBtn.setText("Log-out");
+        getContentPane().add(LogoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 110, 40));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setText("Total number of users:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 170, 30));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setText("Total earning this month:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setText("Inventory Status:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 130, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagepicker/hos.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 100));
+
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Simplifying stays, streamlining management - Hostello, where smart living begins.");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 700, 80));
+
+        userButton.setBackground(new java.awt.Color(204, 255, 153));
+        userButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        userButton.setText("Users");
+        userButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(userButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 430, 110, 30));
+
+        addRoomButton.setBackground(new java.awt.Color(204, 255, 153));
+        addRoomButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        addRoomButton.setText("Add Room");
+        getContentPane().add(addRoomButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 433, 140, 30));
+
+        updateRoomStatus.setBackground(new java.awt.Color(204, 255, 153));
+        updateRoomStatus.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        updateRoomStatus.setText("Update Room Status");
+        getContentPane().add(updateRoomStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, 210, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void settingsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_settingsButtonActionPerformed
+
+    private void userButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -93,7 +170,17 @@ return welcomeLabel;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LogoutBtn;
+    private javax.swing.JButton addRoomButton;
+    private javax.swing.JButton homeButton;
+    private javax.swing.JButton inventoryButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel welcomeLabel;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton paymentButton;
+    private javax.swing.JButton settingsButton;
+    private javax.swing.JButton updateRoomStatus;
+    private javax.swing.JButton userButton;
     // End of variables declaration//GEN-END:variables
 }
