@@ -18,4 +18,14 @@ public class UserDaoTest {
         boolean result = userDao.register(testUser);
         assertTrue(result);
     }
+    @Test 
+    public void testCheckEmail() {
+        String email = "test@test.com";
+        boolean exists = userDao.checkEmail(email);
+        assertTrue(exists);
+        
+        String nonExistentEmail = "nonexistent@test.com";
+        boolean notExists = userDao.checkEmail(nonExistentEmail);
+        assertFalse(notExists);
+    }
 }
