@@ -4,27 +4,43 @@
  */
 package model;
 
-/**
- *
- * @author user
- */
 public class RoomData {
-    private String roomNumber;
-    private String roomType;
-    private String roomStatus;
+    private int room_id;
+    private String room_no;
+    private String room_type;
+    private double room_cost;
+    private String room_status;
+    private int user_id; // warden_id
 
-    public RoomData(String roomNumber, String roomType, String roomStatus) {
-        this.roomNumber = roomNumber;
-        this.roomType = roomType;
-        this.roomStatus = roomStatus;
+    // Empty constructor
+    public RoomData() {}
+
+    // Full constructor
+    public RoomData( String room_no, String room_type, double room_cost, String room_status, int user_id) {
+        
+        this.room_no = room_no;
+        this.room_type = room_type;
+        this.room_cost = room_cost;
+        this.room_status = room_status;
+        this.user_id = user_id;
+    }
+    public RoomData(int room_id, String room_no, String room_type, double room_cost, String room_status, int user_id) {
+        this.room_id = room_id;
+        this.room_no = room_no;
+        this.room_type = room_type;
+        this.room_cost = room_cost;
+        this.room_status = room_status;
+        this.user_id = user_id;
     }
 
-    // Getters and setters:
-    public String getRoomNumber() { return roomNumber; }
-    public void setRoomNumber(String roomNumber) { this.roomNumber = roomNumber; }
+    // Getters and Setters
+    public int getRoomId() {
+        return room_id;
+    }
 
-    public String getRoomType() { return roomType; }
-    public void setRoomType(String roomType) { this.roomType = roomType; }
+    public void setRoomId(int room_id) {
+        this.room_id = room_id;
+    }
 
     public String getRoomStatus() { return roomStatus; }
     public void setRoomStatus(String roomStatus) { this.roomStatus = roomStatus; }

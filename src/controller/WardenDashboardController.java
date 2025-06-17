@@ -7,6 +7,11 @@ package controller;
 import view.LoginView;
 import view.WardenDashboardView;
 import model.UserData;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import view.RoomView;
+import controller.RoomController;
+
 /**
  *
  * @author ACER
@@ -15,18 +20,21 @@ public class WardenDashboardController {
      private WardenDashboardView WardenDashboardView;
      private UserData user;
      private LoginController exsistingUser=new LoginController(new LoginView());
+     
+    
      public WardenDashboardController(WardenDashboardView WardenDashboardView,UserData user) {
         this.WardenDashboardView=WardenDashboardView;
         
         this.WardenDashboardView.getLogoutButton().addActionListener(e -> close());
-        
+        this.WardenDashboardView.getRoomButton().addActionListener(new WardenDashboardController.RedirectToRoom());
         
         String name=user.getUsername();
-        
+        this.user=user;
         this.WardenDashboardView.getWelcomeLabel().setText("Welcome"+" " +name);
-    }
-
-         
+    
+     }
+     
+ 
          
          
          
@@ -38,4 +46,22 @@ public class WardenDashboardController {
         this.WardenDashboardView.dispose();
        new LoginController(new LoginView()).open();
     }
+    
+    
+    class RedirectToRoom implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            WardenDashboardView.dispose();
+        new RoomController(new RoomView(), user.getUserId()).open();
+
+
+
+        }
+        
+    }
+    
+    
+    
+    
+    
 }
