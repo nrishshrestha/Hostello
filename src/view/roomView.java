@@ -9,13 +9,13 @@ import javax.swing.*;
  *
  * @author ACER
  */
-public class RoomView extends javax.swing.JFrame {
+public class roomView extends javax.swing.JFrame {
  
   private JFrame mainFrame;
     /**
      * Creates new form RoomView
      */
-    public RoomView() {
+    public roomView() {
         initComponents();
         // Hides the first column (Room_id)
 roomTable.getColumnModel().getColumn(0).setMinWidth(0);
@@ -207,20 +207,21 @@ public String getSelectedRoomStatus() {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RoomView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(roomView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RoomView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(roomView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RoomView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(roomView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RoomView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(roomView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RoomView().setVisible(true);
+                new roomView().setVisible(true);
             }
         });
     }

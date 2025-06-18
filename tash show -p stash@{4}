@@ -1,0 +1,101 @@
+[1mdiff --git a/nbproject/private/private.properties b/nbproject/private/private.properties[m
+[1mindex c865d16..68e7224 100644[m
+[1m--- a/nbproject/private/private.properties[m
+[1m+++ b/nbproject/private/private.properties[m
+[36m@@ -5,4 +5,4 @@[m [mdo.jlink=false[m
+ javac.debug=true[m
+ javadoc.preview=true[m
+ jlink.strip=false[m
+[31m-user.properties.file=C:\\Users\\DSGAVS\\AppData\\Roaming\\NetBeans\\25\\build.properties[m
+[32m+[m[32muser.properties.file=C:\\Users\\User\\AppData\\Roaming\\NetBeans\\25\\build.properties[m
+[1mdiff --git a/nbproject/private/private.xml b/nbproject/private/private.xml[m
+[1mindex 6807a2b..05d3cc3 100644[m
+[1m--- a/nbproject/private/private.xml[m
+[1m+++ b/nbproject/private/private.xml[m
+[36m@@ -2,6 +2,14 @@[m
+ <project-private xmlns="http://www.netbeans.org/ns/project-private/1">[m
+     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>[m
+     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">[m
+[31m-        <group/>[m
+[32m+[m[32m        <group>[m
+[32m+[m[32m            <file>file:/D:/Hostello/src/controller/StudentController.java</file>[m
+[32m+[m[32m            <file>file:/D:/Hostello/src/controller/RoomController.java</file>[m
+[32m+[m[32m            <file>file:/D:/Hostello/src/model/StudentData.java</file>[m
+[32m+[m[32m            <file>file:/D:/Hostello/src/model/UserData.java</file>[m
+[32m+[m[32m            <file>file:/D:/Hostello/src/dao/RoomDao.java</file>[m
+[32m+[m[32m            <file>file:/D:/Hostello/src/view/AdminDashboardView.java</file>[m
+[32m+[m[32m            <file>file:/D:/Hostello/src/view/LoginView.java</file>[m
+[32m+[m[32m        </group>[m
+     </open-files>[m
+ </project-private>[m
+[1mdiff --git a/nbproject/project.properties b/nbproject/project.properties[m
+[1mindex 3367541..dd69b15 100644[m
+[1m--- a/nbproject/project.properties[m
+[1m+++ b/nbproject/project.properties[m
+[36m@@ -32,19 +32,20 @@[m [mexcludes=[m
+ <<<<<<< HEAD[m
+ <<<<<<< HEAD[m
+ file.reference.AbsoluteLayout.jar=E:\\school(softwarica)\\Sem-2\\Assignments\\Hostello\\AbsoluteLayout.jar[m
+[31m-file.reference.hamcrest-3.0.jar=C:\\Users\\DSGAVS\\Downloads\\hamcrest-3.0.jar[m
+[31m-file.reference.javax.activation-1.2.0.jar=E:\\school(softwarica)\\Sem-2\\Assignments\\Hostello\\javax.activation-1.2.0.jar[m
+[31m-file.reference.javax.activation-1.2.0.jar-1=C:\\Users\\DSGAVS\\Downloads\\javax.activation-1.2.0.jar[m
+[31m-file.reference.junit-4.13.2.jar=C:\\Users\\DSGAVS\\Downloads\\junit-4.13.2.jar[m
+[32m+[m[32mfile.reference.AbsoluteLayout.jar-1=C:\\Users\\User\\Downloads\\AbsoluteLayout.jar[m
+[32m+[m[32mfile.reference.hamcrest-3.0.jar-1=C:\\Users\\User\\Downloads\\hamcrest-3.0.jar[m
+[32m+[m[32mfile.reference.imap.jar=C:\\Users\\User\\Downloads\\imap.jar[m
+[32m+[m[32mfile.reference.javax.activation-1.2.0__1_.jar=C:\\Users\\User\\Downloads\\javax.activation-1.2.0 (1).jar[m
+[32m+[m[32mfile.reference.junit-4.13.2.jar-1=C:\\Users\\User\\Downloads\\junit-4.13.2.jar[m
+ file.reference.mail.jar=E:\\school(softwarica)\\Sem-2\\Assignments\\Hostello\\mail.jar[m
+ file.reference.mail.jar-1=E:\\school(softwarica)\\Sem-2\\Assignments\\Hostello\\mail.jar[m
+ file.reference.mail.jar-1=E:\\school(softwarica)\\Sem-2\\Assignments\\Hostello\\mail.jar[m
+[31m-file.reference.mail.jar-2=C:\\Users\\DSGAVS\\Downloads\\mail.jar[m
+ =======[m
+ file.reference.javax.activation-1.2.0.jar=C:\\Users\\Hp\\Downloads\\javax.activation-1.2.0.jar[m
+ file.reference.mail.jar=C:\\Users\\Hp\\Downloads\\mail.jar[m
+[32m+[m[32mfile.reference.mail__1_.jar=C:\\Users\\User\\Downloads\\mail (1).jar[m
+ file.reference.mysql-connector-j-9.2.0.jar=C:\\Users\\Hp\\Downloads\\mysql-connector-j-9.2.0.jar[m
+[31m-file.reference.mysql-connector-j-9.2.0.jar-1=E:\\school(softwarica)\\Sem-2\\mysql-connector-j-9.2.0 (1)\\mysql-connector-j-9.2.0\\mysql-connector-j-9.2.0.jar[m
+[32m+[m[32mfile.reference.mysql-connector-j-9.2.0.jar-2=C:\\Users\\User\\Downloads\\mysql-connector-j-9.2.0.jar[m
+ file.reference.smtp.jar=C:\\Users\\Hp\\Downloads\\smtp.jar[m
+ >>>>>>> main[m
+ =======[m
+[36m@@ -56,6 +57,7 @@[m [mfile.reference.junit-4.13.2.jar=C:\\Users\\DSGAVS\\Downloads\\junit-4.13.2.jar[m
+ file.reference.mail.jar-1=C:\\Users\\DSGAVS\\Downloads\\mail.jar[m
+ file.reference.mysql-connector-j-9.2.0.jar-1=C:\\Users\\DSGAVS\\Downloads\\mysql-connector-j-9.2.0.jar[m
+ >>>>>>> main[m
+[32m+[m[32mfile.reference.smtp.jar-1=C:\\Users\\User\\Downloads\\smtp.jar[m
+ includes=**[m
+ jar.compress=false[m
+ javac.classpath=\[m
+[36m@@ -66,13 +68,14 @@[m [mjavac.classpath=\[m
+ includes=**[m
+ jar.compress=false[m
+ javac.classpath=\[m
+[31m-    ${libs.absolutelayout.classpath}:\[m
+[31m-    ${file.reference.javax.activation-1.2.0.jar}:\[m
+[31m-    <<<<<<< HEAD:\[m
+[31m-    ${file.reference.hamcrest-3.0.jar}:\[m
+[31m-    ${file.reference.javax.activation-1.2.0.jar-1}:\[m
+[31m-    ${file.reference.junit-4.13.2.jar}:\[m
+[31m-    ${file.reference.mail.jar-2}[m
+[32m+[m[32m    ${file.reference.AbsoluteLayout.jar-1}:\[m
+[32m+[m[32m    ${file.reference.hamcrest-3.0.jar-1}:\[m
+[32m+[m[32m    ${file.reference.imap.jar}:\[m
+[32m+[m[32m    ${file.reference.javax.activation-1.2.0__1_.jar}:\[m
+[32m+[m[32m    ${file.reference.junit-4.13.2.jar-1}:\[m
+[32m+[m[32m    ${file.reference.mail__1_.jar}:\[m
+[32m+[m[32m    ${file.reference.mysql-connector-j-9.2.0.jar-2}:\[m
+[32m+[m[32m    ${file.reference.smtp.jar-1}[m
+     ${file.reference.mail.jar-1}:\[m
+     ${file.reference.mysql-connector-j-9.2.0.jar-1}:\[m
+     ${file.reference.javax.activation-1.2.0.jar-1}:\[m
+[36m@@ -96,8 +99,7 @@[m [mjavac.compilerargs=[m
+ >>>>>>> main[m
+ javac.deprecation=false[m
+ javac.external.vm=false[m
+[31m-javac.modulepath=\[m
+[31m-    ${file.reference.mysql-connector-j-9.2.0.jar-1}[m
+[32m+[m[32mjavac.modulepath=[m
+ javac.processormodulepath=[m
+ javac.processorpath=\[m
+     ${javac.classpath}[m

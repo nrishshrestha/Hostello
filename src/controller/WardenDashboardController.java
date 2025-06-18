@@ -9,7 +9,7 @@ import view.WardenDashboardView;
 import model.UserData;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import view.RoomView;
+import view.roomView;
 import controller.RoomController;
 
 /**
@@ -52,7 +52,7 @@ public class WardenDashboardController {
         @Override
         public void actionPerformed(ActionEvent e) {
             WardenDashboardView.dispose();
-        new RoomController(new RoomView(), user.getUserId()).open();
+        new RoomController(new roomView(), user.getUserId()).open();
 
 
 
