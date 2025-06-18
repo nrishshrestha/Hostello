@@ -1,50 +1,84 @@
 import dao.UserDao;
 import model.UserData;
 import model.ResetPasswordRequest;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class UserDaoTest {
     
-    private UserDao userDao = new UserDao();
+    private UserDao userDao;
+    private UserData testUser;
     
-    @Test
-    public void testRegister() {
-        UserData testUser = new UserData();
+    @Before
+    public void setUp() {
+        userDao = new UserDao();
+        testUser = new UserData();
         testUser.setUsername("testUser");
         testUser.setEmail("test@test.com");
         testUser.setPassword("password123");
-        
-        boolean result = userDao.register(testUser);
-        assertTrue(result);
     }
+    
+    @After
+    public void tearDown() {
+        // Clean up test data
+        try {
+            userDao.deleteUser("test@test.com");
+        } catch (Exception e) {
+            // Ignore cleanup errors
+        }
+    }
+    
+    @Test
+    public void testRegister() {
+        boolean result = userDao.register(testUser);
+        assertTrue("Registration should succeed with valid user data", result);
+        
+        // Test duplicate registration
+        boolean duplicateResult = userDao.register(testUser);
+        assertFalse("Registration should fail for duplicate email", duplicateResult);
+    }
+    
     @Test 
     public void testCheckEmail() {
-        String email = "test@test.com";
-        boolean exists = userDao.checkEmail(email);
-        assertTrue(exists);
+        // First register a user to check
+        userDao.register(testUser);
         
-        String nonExistentEmail = "nonexistent@test.com";
-        boolean notExists = userDao.checkEmail(nonExistentEmail);
-        assertFalse(notExists);
+        boolean exists = userDao.checkEmail("test@test.com");
+        assertTrue("Should find existing email", exists);
+        
+        boolean notExists = userDao.checkEmail("nonexistent@test.com");
+        assertFalse("Should not find non-existent email", notExists);
     }
+    
     @Test
     public void testResetPassword() {
+        // First register a user
+        userDao.register(testUser);
+        
         ResetPasswordRequest request = new ResetPasswordRequest();
         request.setEmail("test@test.com");
         request.setPassword("newpassword123");
         
         boolean result = userDao.resetPassword(request);
-        assertTrue(result);
+        assertTrue("Password reset should succeed", result);
+        
+        // Verify new password works
+        UserData loggedInUser = userDao.login("test@test.com", "newpassword123");
+        assertNotNull("Should be able to login with new password", loggedInUser);
     }
     
     @Test
     public void testLogin() {
+        // First register a user
+        userDao.register(testUser);
+        
         UserData user = userDao.login("test@test.com", "password123");
-        assertNotNull(user);
-        assertEquals("test@test.com", user.getEmail());
+        assertNotNull("Login should succeed with correct credentials", user);
+        assertEquals("Email should match", "test@test.com", user.getEmail());
         
         UserData invalidUser = userDao.login("wrong@email.com", "wrongpass");
-        assertNull(invalidUser);
+        assertNull("Login should fail with incorrect credentials", invalidUser);
     }
 }
