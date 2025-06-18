@@ -4,6 +4,9 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JTable;
+
 /**
  *
  * @author User
