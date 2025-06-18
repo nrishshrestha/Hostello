@@ -22,7 +22,7 @@ public class AdminDashboardController {
         
         String name=user.getUsername();
         
-        this.AdminDashboardView.getWelcomeLabel().setText("Welcome"+" " +name);
+        this.AdminDashboardView.getwelcomeLabel().setText("Welcome"+" " +name);
     }
 
     public void open() {

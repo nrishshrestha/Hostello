@@ -13,8 +13,6 @@ import javax.swing.JLabel;
  * @author ACER
  */
 public class AdminDashboardView extends javax.swing.JFrame {
-
-
     /**
      * Creates new form AdminDashboardView
      */
@@ -25,24 +23,20 @@ public class AdminDashboardView extends javax.swing.JFrame {
 public JButton getLogoutButton() {
         return LogoutBtn;
     }
-public JButton getHomeButton(){
-    return homeButton;
-}
-public JButton getInventoryButton(){
-    return inventoryButton;
-}
-public JLabel onelinerLabel(){
-    return onelinerLabel;
-}
 public JLabel getwelcomeLabel(){
     return welcomeLabel;
 }
-public JLabel getusernameLabel(){
-    return usernameLabel;
-}
-public JLabel gettitleLabel(){
-    return titleLabel;
-}
+public JButton getWardenButton(){
+   return wardenButton;
+   }
+    
+public JButton getAdminButton(){
+   return adminButton;
+   }
+    
+public JButton getDeleteAccountButton() {
+    return deleteAccountButton;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
