@@ -42,10 +42,6 @@ public class RoomData {
         this.room_id = room_id;
     }
 
-<<<<<<< HEAD
-    public String getRoomStatus() { return roomStatus; }
-    public void setRoomStatus(String roomStatus) { this.roomStatus = roomStatus; }
-=======
     public String getRoomNo() {
         return room_no;
     }
@@ -86,5 +82,4 @@ public class RoomData {
         this.user_id = user_id;
     }
 
->>>>>>> fb580745053b605471ea10c3baa6d5814bc9708d
 }
