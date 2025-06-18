@@ -8,7 +8,7 @@ package view;
  *
  * @author User
  */
-public class InventoryView extends javax.swing.JPanel {
+public class InventoryView extends javax.swing.JFrame { // Change JPanel to JFrame
 
     /**
      * Creates new form InventoryView
@@ -300,4 +300,42 @@ public class InventoryView extends javax.swing.JPanel {
     private javax.swing.JButton settingsButton;
     private javax.swing.JComboBox<String> statusComboBox;
     // End of variables declaration//GEN-END:variables
+
+    // Add these getter methods
+    public JButton getAddButton() {
+        return addButton;
+    }
+
+    public JButton getBackButton() {
+        return backButton;
+    }
+
+    public JTable getInventoryTable() {
+        return inventoryTable;
+    }
+
+    public String getItemNameField() {
+        return itemNameField.getText();
+    }
+
+    public int getInitialCountField() {
+        return Integer.parseInt(initialCountField.getText());
+    }
+
+    public int getOngoingCountField() {
+        return Integer.parseInt(ongoingCountField.getText());
+    }
+
+    public String getSelectedStatus() {
+        return statusComboBox.getSelectedItem().toString();
+    }
+
+    public double getCostPerItemField() {
+        return Double.parseDouble(costPerItemField.getText());
+    }
+
+    public void dispose() {
+        this.setVisible(false);
+        this.dispose();
+    }
 }
