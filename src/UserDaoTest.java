@@ -30,7 +30,7 @@ public class UserDaoTest {
     }
     @Test
     public void testResetPassword() {
-        ResetPasswordRequest request = new ResetPasswordRequest();
+        ResetPasswordRequest request = new ResetPasswordRequest("test@test.com","newpassword123");
         request.setEmail("test@test.com");
         request.setPassword("newpassword123");
         

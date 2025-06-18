@@ -7,7 +7,7 @@ import dao.RoomDao;
 import dao.UserDao;
 import java.awt.GridLayout;
 import model.RoomData;
-import view.RoomView;
+import view.roomView;
 import view.WardenDashboardView;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -23,12 +23,12 @@ import model.UserData;
 
  public class RoomController {
 
-  private RoomView roomView;
+  private roomView roomView;
   private RoomDao roomDao;
   private RoomData selectedRoom;
   private int currentUserId;
 
-  public RoomController(RoomView roomView, int userId) {
+  public RoomController(roomView roomView, int userId) {
       this.roomView = roomView;
       this.roomDao = new RoomDao();
       this.currentUserId = userId;
