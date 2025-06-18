@@ -216,7 +216,10 @@ public String getSelectedRoomStatus() {
             java.util.logging.Logger.getLogger(RoomView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+<<<<<<< HEAD
         //</editor-fold>
+=======
+>>>>>>> fb580745053b605471ea10c3baa6d5814bc9708d
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
