@@ -173,4 +173,3 @@ public JLabel getForgotPassword() {
     private javax.swing.JTextField txtEmail;
     // End of variables declaration//GEN-END:variables
 }
-

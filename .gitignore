@@ -1,4 +1,10 @@
-/Hostello_App_1/nbproject/private/
+/Hostello_App_1/nbproject/
 /dist/
 /build/build/classes/
-/nbproject/private/
+
+build/
+nbproject/private/
+src/view/RoomViewFix.java
+src/view/RoomViewFix.form
+*.class
+.idea/
