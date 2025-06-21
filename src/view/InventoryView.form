@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="2"/>
+  </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -48,35 +51,26 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="itemNameLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="itemNameField" min="-2" pref="130" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="initialCountLabel" min="-2" pref="70" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="initialCountField" min="-2" pref="130" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                              <Component id="addButton" min="-2" pref="110" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="itemStatusLabel" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
                                   <Component id="remainingCountLabel" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="initialCountLabel" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
+                                  <Component id="itemNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="costPerItemLabel" alignment="0" min="-2" pref="72" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="costPerItemField" min="-2" pref="130" max="-2" attributes="0"/>
+                                  <Component id="itemNameField" min="-2" pref="130" max="-2" attributes="0"/>
+                                  <Component id="initialCountField" min="-2" pref="130" max="-2" attributes="0"/>
                                   <Component id="ongoingCountField" min="-2" pref="130" max="-2" attributes="0"/>
                                   <Component id="statusComboBox" min="-2" max="-2" attributes="0"/>
                               </Group>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="costPerItemLabel" min="-2" pref="72" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="costPerItemField" min="-2" pref="130" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                              <Component id="addButton" min="-2" pref="110" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="102" max="32767" attributes="0"/>
@@ -107,48 +101,46 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="settingsButton" min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="itemNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="itemNameField" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="itemNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="itemNameField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="initialCountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="initialCountField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="paymentButton" min="-2" pref="40" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="homeButton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                                  <Component id="costPerItemLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="initialCountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="initialCountField" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                              <Component id="inventoryButton" min="-2" pref="40" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="LogoutBtn" min="-2" pref="40" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="remainingCountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="ongoingCountField" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="itemStatusLabel" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                      <Component id="statusComboBox" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="itemStatusLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="statusComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="costPerItemField" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="addButton" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="paymentButton" min="-2" pref="40" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="homeButton" min="-2" pref="40" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="costPerItemLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="inventoryButton" min="-2" pref="40" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                              <Component id="LogoutBtn" min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
