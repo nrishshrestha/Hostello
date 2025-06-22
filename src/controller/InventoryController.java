@@ -6,7 +6,7 @@ package controller;
 
 /**
  *
- * @author DSGAVS
+ * @author ACER
  */
 import dao.InventoryDao;
 import dao.UserDao;
@@ -18,32 +18,23 @@ import view.WardenDashboardView;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
 
 public class InventoryController {
-    private final InventoryView view;
-    private final InventoryDao dao;
-    private final int currentUserId;
+    private InventoryView view;
+    private InventoryDao dao;
+    private int currentUserId;
 
     public InventoryController(InventoryView view, int userId) {
         this.view = view;
         this.dao = new InventoryDao();
         this.currentUserId = userId;
 
-        // Initialize view components
-        view.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        view.setLocationRelativeTo(null);
-        view.setResizable(false);
-
-        // Add action listeners
         view.getAddButton().addActionListener(new AddInventoryHandler());
         view.getInventoryTable().addMouseListener(new InventoryTableClickHandler());
         view.getBackButton().addActionListener(new RedirectToDashboard());
-        
-        // Load initial data
         loadInventoryToTable();
     }
 
@@ -162,62 +153,53 @@ updateButton.addActionListener(e -> {
         cancelButton.addActionListener(e -> popup.dispose());
     }
 
-    // Update loadInventoryToTable method
-    private void loadInventoryToTable() {
-        List<InventoryData> inventoryList = dao.getInventoryByUser(currentUserId);
-        DefaultTableModel model = (DefaultTableModel) view.getInventoryTable().getModel();
-        model.setRowCount(0); // Clear existing rows
-
-        for (InventoryData item : inventoryList) {
-            model.addRow(new Object[]{
-                item.getItemId(),
-                item.getItemName(),
-                item.getInitialCount(),
-                item.getOngoingCount(),
-                item.getItemStatus()
-            });
-        }
-    }
-
-    // Update AddInventoryHandler
-    class AddInventoryHandler implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            try {
-                // Get values directly using view methods
-                InventoryData item = new InventoryData(
-                    view.getItemNameField(),
-                    view.getInitialCountField(),
-                    view.getOngoingCountField(),
-                    view.getSelectedStatus(),
-                    view.getCostPerItemField(),
-                    currentUserId
-                );
-
-                if (dao.addInventory(item)) {
-                    JOptionPane.showMessageDialog(view, "Item added successfully");
-                    loadInventoryToTable();
-                } else {
-                    JOptionPane.showMessageDialog(view, "Failed to add item");
-                }
-            } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(view, 
-                    "Please enter valid numbers for counts and cost",
-                    "Input Error",
-                    JOptionPane.ERROR_MESSAGE);
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(view,
-                    "Error: " + ex.getMessage(),
-                    "Error",
-                    JOptionPane.ERROR_MESSAGE);
-            }
-        }
-    }
-
     public void open() {
         view.setVisible(true);
     }
     public void close() {
         view.dispose();
     }
+    
+    private void loadInventoryToTable() {
+        List<InventoryData> inventoryList = dao.getInventoryByUser(currentUserId);
+        String[] columnNames = {"ItemId", "Item Name","Initial Count", "Ongoing Count", "Status"};
+        String[][] data = new String[inventoryList.size()][5];
+
+        for (int i = 0; i < inventoryList.size(); i++) {
+            InventoryData item = inventoryList.get(i);
+            data[i][0] = String.valueOf(item.getItemId());
+            data[i][1] = item.getItemName();
+            data[i][2] = String.valueOf(item.getInitialCount());
+            data[i][3] = String.valueOf(item.getOngoingCount());
+            data[i][4] = item.getItemStatus();
+        }
+
+        view.getInventoryTable().setModel(new javax.swing.table.DefaultTableModel(data, columnNames));
+    }
+
+    class AddInventoryHandler implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            try {
+                String itemName = view.getItemNameField();
+                int initial = view.getInitialCountField();
+                int ongoing = view.getOngoingCountField();
+                String status = view.getSelectedStatus();
+                double cost = view.getCostPerItemField();
+
+                InventoryData item = new InventoryData(itemName, initial, ongoing, status, cost, currentUserId);
+                boolean success = dao.addInventory(item);
+
+                if (success) {
+                    JOptionPane.showMessageDialog(view, "Item added successfully.");
+                    loadInventoryToTable();
+                } else {
+                    JOptionPane.showMessageDialog(view, "Failed to add item.");
+                }
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(view, "Error: " + ex.getMessage());
+            }
+        }
+    }
 }
+

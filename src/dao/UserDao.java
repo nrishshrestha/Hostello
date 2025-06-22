@@ -14,6 +14,9 @@ import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import model.ResetPasswordRequest;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDao {
 
@@ -116,6 +119,138 @@ String sql = "SELECT * FROM users WHERE user_id = ?";
         }
  }
  
+ 
+   public boolean deleteUser(int userId) {
+    String query = "DELETE FROM users WHERE user_id = ?";
+    Connection conn = mySql.openConnection();
+    try {
+        PreparedStatement stmt = conn.prepareStatement(query);
+        stmt.setInt(1, userId);
+        return stmt.executeUpdate() > 0;
+    } catch(Exception e){
+        e.printStackTrace();
+        return false;
+    }
+}
+
+   
+   public boolean updateUser(UserData user) {
+    String sql = "UPDATE users SET username = ?, email = ?, password = ?, role = ? WHERE user_id = ?";
+    Connection conn = mySql.openConnection();
+    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+        stmt.setString(1, user.getUsername());
+        stmt.setString(2, user.getEmail());
+        stmt.setString(3, user.getPassword());
+        stmt.setString(4, user.getRole());
+        stmt.setInt(5, user.getUserId());
+        return stmt.executeUpdate() > 0;
+    } catch (SQLException e) {
+        e.printStackTrace();
+        return false;
+    } finally {
+        mySql.closeConnection(conn);
+    }
+}
+
+public boolean addAdmin(UserData user) {
+    String sql = "INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, 'admin')";
+    Connection conn = mySql.openConnection();
+
+    try {
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, user.getUsername());
+        stmt.setString(2, user.getEmail());
+        stmt.setString(3, user.getPassword());
+
+        int result = stmt.executeUpdate();
+        return result > 0;
+    } catch (SQLException e) {
+        System.out.println("Error in addAdmin: " + e.getMessage());
+        return false;
+    } finally {
+        mySql.closeConnection(conn);
+    }
+}
+
+
+   
+ public List<UserData> getAllAdmins() {
+    List<UserData> admins = new ArrayList<>();
+    String sql = "SELECT * FROM users WHERE role = 'admin'";
+    Connection conn = mySql.openConnection();
+
+    try {
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        ResultSet rs = stmt.executeQuery();
+
+        while (rs.next()) {
+            UserData admin = new UserData(
+                rs.getInt("user_id"),
+                rs.getString("username"),
+                rs.getString("email"),
+                rs.getString("password"),
+                rs.getString("role")
+            );
+            admins.add(admin);
+        }
+
+    } catch (SQLException e) {
+        System.out.println("Error in getAllAdmins: " + e.getMessage());
+    } finally {
+        mySql.closeConnection(conn);
+    }
+
+    return admins;
+}
+
+   
+public List<UserData> getAllWardens() {
+    List<UserData> wardens = new ArrayList<>();
+    String sql = "SELECT * FROM users WHERE role = 'warden'";
+    Connection conn = mySql.openConnection();
+
+    try {
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        ResultSet rs = stmt.executeQuery();
+
+        while (rs.next()) {
+            UserData warden = new UserData(
+                rs.getInt("user_id"),
+                rs.getString("username"),
+                rs.getString("email"),
+                rs.getString("password"),
+                rs.getString("role")
+            );
+            wardens.add(warden);
+        }
+
+    } catch (SQLException e) {
+        System.out.println("Error in getAllWardens: " + e.getMessage());
+    } finally {
+        mySql.closeConnection(conn);
+    }
+
+    return wardens;
+}
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
    
     
     public UserData login(String email, String password) {

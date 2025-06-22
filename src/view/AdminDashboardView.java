@@ -25,24 +25,30 @@ public class AdminDashboardView extends javax.swing.JFrame {
 public JButton getLogoutButton() {
         return LogoutBtn;
     }
-public JButton getHomeButton(){
-    return homeButton;
+public JLabel getWelcomeLabel(){
+return welcomeLabel;
 }
-public JButton getInventoryButton(){
-    return inventoryButton;
+
+   public JButton getWardenButton(){
+   return wardenButton;
+   }
+    
+    public JButton getAdminButton(){
+   return adminButton;
+   }
+    
+    public JButton getDeleteAccountButton() {
+    return deleteAccountButton;
 }
-public JLabel onelinerLabel(){
-    return onelinerLabel;
-}
-public JLabel getwelcomeLabel(){
-    return welcomeLabel;
-}
-public JLabel getusernameLabel(){
-    return usernameLabel;
-}
-public JLabel gettitleLabel(){
-    return titleLabel;
-}
+
+
+
+
+
+
+
+
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -52,93 +58,87 @@ public JLabel gettitleLabel(){
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        homeButton = new javax.swing.JButton();
-        settingsButton = new javax.swing.JButton();
-        paymentButton = new javax.swing.JButton();
-        inventoryButton = new javax.swing.JButton();
         LogoutBtn = new javax.swing.JButton();
-        hostelloImageButton = new javax.swing.JLabel();
-        onelinerLabel = new javax.swing.JLabel();
+        titleLabel = new javax.swing.JLabel();
+        welcomeLabel = new javax.swing.JLabel();
         wardenButton = new javax.swing.JButton();
         adminButton = new javax.swing.JButton();
         deleteAccountButton = new javax.swing.JButton();
-        titleLabel = new javax.swing.JLabel();
-        welcomeLabel = new javax.swing.JLabel();
-        profilePicture = new javax.swing.JLabel();
-        usernameLabel = new javax.swing.JLabel();
+
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        homeButton.setBackground(new java.awt.Color(153, 204, 255));
-        homeButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
-        homeButton.setText("Home");
-        getContentPane().add(homeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 110, 40));
 
-        settingsButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
-        settingsButton.setText("Settings");
-        settingsButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                settingsButtonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(settingsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 110, 40));
-
-        paymentButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
-        paymentButton.setText("Payment");
-        getContentPane().add(paymentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 110, 40));
-
-        inventoryButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
-        inventoryButton.setText("Inventory");
-        getContentPane().add(inventoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 110, 40));
-
-        LogoutBtn.setBackground(new java.awt.Color(204, 0, 51));
-        LogoutBtn.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
-        LogoutBtn.setForeground(new java.awt.Color(255, 255, 255));
-        LogoutBtn.setText("Log-out");
-        getContentPane().add(LogoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 110, 40));
-
-        hostelloImageButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagepicker/hos.png"))); // NOI18N
-        getContentPane().add(hostelloImageButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 100));
-
-        onelinerLabel.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
-        onelinerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        onelinerLabel.setText("Simplifying stays, streamlining management - Hostello, where smart living begins.");
-        getContentPane().add(onelinerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 720, 50));
-
-        wardenButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
-        wardenButton.setText("Wardens");
-        getContentPane().add(wardenButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 120, 40));
-
-        adminButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
-        adminButton.setText("Admins");
-        getContentPane().add(adminButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 120, 40));
-
-        deleteAccountButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
-        deleteAccountButton.setText("Delete Account");
-        getContentPane().add(deleteAccountButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 180, 40));
+        LogoutBtn.setText("Logout");
+        getContentPane().add(LogoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(828, 79, -1, -1));
 
         titleLabel.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         titleLabel.setText("Admin Dashboard");
-        getContentPane().add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 210, 40));
+        getContentPane().add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 220, 100));
+
+        LogoutBtn.setBackground(new java.awt.Color(0, 0, 0));
+        LogoutBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        LogoutBtn.setForeground(new java.awt.Color(255, 255, 255));
+        LogoutBtn.setText("Logout");
+        getContentPane().add(LogoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
+
+        titleLabel.setFont(new java.awt.Font("Yu Gothic Medium", 1, 36)); // NOI18N
+        titleLabel.setForeground(new java.awt.Color(255, 255, 204));
+        titleLabel.setText("Admin Dashboard");
+        getContentPane().add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 320, 100));
+
 
         welcomeLabel.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        welcomeLabel.setForeground(new java.awt.Color(255, 255, 255));
         welcomeLabel.setText("..");
-        getContentPane().add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 32, 30, 20));
 
-        profilePicture.setBackground(new java.awt.Color(255, 255, 255));
-        profilePicture.setText("Profile Picture");
-        getContentPane().add(profilePicture, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 110, 80, 60));
+        getContentPane().add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 190, -1));
 
-        usernameLabel.setText("Username");
-        getContentPane().add(usernameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 190, -1, -1));
+        wardenButton.setText("Wardens");
+        getContentPane().add(wardenButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, -1, -1));
+
+        adminButton.setText("Admins");
+        getContentPane().add(adminButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, -1, -1));
+
+        deleteAccountButton.setText("Delete Account");
+        getContentPane().add(deleteAccountButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, -1, -1));
+
+        getContentPane().add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 190, -1));
+
+        wardenButton.setBackground(new java.awt.Color(204, 204, 204));
+        wardenButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
+        wardenButton.setText("Wardens");
+        getContentPane().add(wardenButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+
+        adminButton.setBackground(new java.awt.Color(51, 102, 255));
+        adminButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
+        adminButton.setForeground(new java.awt.Color(255, 255, 255));
+        adminButton.setText("Admins");
+        getContentPane().add(adminButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 130, -1));
+
+        deleteAccountButton.setBackground(new java.awt.Color(255, 0, 51));
+        deleteAccountButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
+        deleteAccountButton.setForeground(new java.awt.Color(255, 255, 255));
+        deleteAccountButton.setText("Delete Account");
+        getContentPane().add(deleteAccountButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagepicker/hos.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, -1, -1));
+
+        jPanel2.setBackground(new java.awt.Color(70, 69, 68));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 310, 480));
+
+        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 480));
+
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void settingsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_settingsButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,6 +166,7 @@ public JLabel gettitleLabel(){
             java.util.logging.Logger.getLogger(AdminDashboardView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -179,15 +180,13 @@ public JLabel gettitleLabel(){
     private javax.swing.JButton LogoutBtn;
     private javax.swing.JButton adminButton;
     private javax.swing.JButton deleteAccountButton;
-    private javax.swing.JButton homeButton;
-    private javax.swing.JLabel hostelloImageButton;
-    private javax.swing.JButton inventoryButton;
-    private javax.swing.JLabel onelinerLabel;
-    private javax.swing.JButton paymentButton;
-    private javax.swing.JLabel profilePicture;
-    private javax.swing.JButton settingsButton;
+
+
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+
     private javax.swing.JLabel titleLabel;
-    private javax.swing.JLabel usernameLabel;
     private javax.swing.JButton wardenButton;
     private javax.swing.JLabel welcomeLabel;
     // End of variables declaration//GEN-END:variables
