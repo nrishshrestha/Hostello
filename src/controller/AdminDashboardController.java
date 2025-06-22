@@ -4,7 +4,6 @@
  */
 package controller;
 
-import controller.LoginController;
 import dao.UserDao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,10 +11,7 @@ import javax.swing.JOptionPane;
 import model.UserData;
 import view.AdminDashboardView;
 import view.AdminView;
-import view.InventoryView;
 import view.LoginView;
-import view.StudentView;
-import view.WardenDashboardView;
 import view.WardenView;
 
 /**
@@ -33,20 +29,14 @@ public class AdminDashboardController {
         {
             this.AdminDashboardView=AdminDashboardView;
         this.AdminDashboardView.getLogoutButton().addActionListener(e -> close());
-       this.AdminDashboardView.getWardenButton().addActionListener(new AdminDashboardController.RedirectToWarden());
+        this.AdminDashboardView.getWardenButton().addActionListener(new AdminDashboardController.RedirectToWarden());
         this.AdminDashboardView.getAdminButton().addActionListener(new AdminDashboardController.RedirectToAdmin());
         this.AdminDashboardView.getDeleteAccountButton().addActionListener(e -> deleteAccount());
         String name=user.getUsername();
-<<<<<<< HEAD
-        
-        this.AdminDashboardView.getwelcomeLabel().setText("Welcome"+" " +name);
-    }
-=======
         this.user=user;
         this.AdminDashboardView.getWelcomeLabel().setText("Welcome"+" " +name);
     
         }
->>>>>>> d38e6367bf25627266e382427e326ed00f7b23b3
 
     public void open() {
         this.AdminDashboardView.setVisible(true);
