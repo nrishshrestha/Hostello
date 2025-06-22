@@ -3,8 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package hostello;
-import hostello.controller.RegisterController;
-import hostello.view.RegisterView;
+import controller.RegisterController;
+import view.RegisterView;
 
 /**
  *
@@ -12,11 +12,10 @@ import hostello.view.RegisterView;
  */
 public class Hostello {
     public static void main(String[] args) {
-//        javax.swing.SwingUtilities.invokeLater(() -> {
+        javax.swing.SwingUtilities.invokeLater(() -> {
             RegisterView registerView = new RegisterView();
             RegisterController registerController = new RegisterController(registerView);
             registerController.open();  // Entry point
-            System.out.println("Entry Point");
-//        });
+        });
     }
 }
