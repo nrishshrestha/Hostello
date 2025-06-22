@@ -21,15 +21,15 @@ public class StudentData {
     private String institution;
     private String profile_picture;
     private int room_id;
-    private int warden_id;
-
+    private int user_id;
+    private String roomNo;
     // Empty constructor
     public StudentData() {}
 
     // Constructor without ID (for inserts)
     public StudentData(String name, String email, String phone, String sex, int age,
                        String occupation, String institution, String profile_picture,
-                       int room_id, int warden_id) {
+                       int room_id, int user_id) {
         this.name = name;
         this.email = email;
         this.phone = phone;
@@ -39,13 +39,13 @@ public class StudentData {
         this.institution = institution;
         this.profile_picture = profile_picture;
         this.room_id = room_id;
-        this.warden_id = warden_id;
+        this.user_id = user_id;
     }
 
     // Full constructor with ID (for updates)
     public StudentData(int student_id, String name, String email, String phone, String sex, int age,
                        String occupation, String institution, String profile_picture,
-                       int room_id, int warden_id) {
+                       int room_id, int user_id) {
         this.student_id = student_id;
         this.name = name;
         this.email = email;
@@ -56,9 +56,18 @@ public class StudentData {
         this.institution = institution;
         this.profile_picture = profile_picture;
         this.room_id = room_id;
-        this.warden_id = warden_id;
+        this.user_id = user_id;
     }
 
+    public String getRoomNo() {
+    return roomNo;
+}
+
+public void setRoomNo(String roomNo) {
+    this.roomNo = roomNo;
+}
+    
+    
     // Getters and setters
     public int getStudentId() {
         return student_id;
@@ -140,11 +149,11 @@ public class StudentData {
         this.room_id = room_id;
     }
 
-    public int getWardenId() {
-        return warden_id;
+    public int getUserId() {
+        return user_id;
     }
 
-    public void setWardenId(int warden_id) {
-        this.warden_id = warden_id;
+    public void setUserId(int user_id) {
+        this.user_id = user_id;
     }
 }

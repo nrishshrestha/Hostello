@@ -30,7 +30,18 @@ public class WardenDashboardView extends javax.swing.JFrame {
    return roomButton;
    }
    
-   
+    public JButton getStudentButton(){
+   return studentButton;
+   }
+    
+    public JButton getInventoryButton(){
+   return inventoryButton;
+   }
+    
+    public JButton getDeleteAccountButton() {
+    return deleteAccountButton;
+}
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,7 +56,10 @@ public class WardenDashboardView extends javax.swing.JFrame {
         welcomeLabel = new javax.swing.JLabel();
         jToolBar1 = new javax.swing.JToolBar();
         jLabel1 = new javax.swing.JLabel();
+        studentButton = new javax.swing.JButton();
         roomButton = new javax.swing.JButton();
+        inventoryButton = new javax.swing.JButton();
+        deleteAccountButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -75,6 +89,13 @@ public class WardenDashboardView extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagepicker/room.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, -50, 470, 520));
 
+        studentButton.setBackground(new java.awt.Color(255, 0, 51));
+        studentButton.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        studentButton.setForeground(new java.awt.Color(255, 255, 255));
+        studentButton.setText("Students");
+        studentButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(studentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 170, -1));
+
         roomButton.setBackground(new java.awt.Color(255, 0, 51));
         roomButton.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         roomButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -82,13 +103,30 @@ public class WardenDashboardView extends javax.swing.JFrame {
         roomButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(roomButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 170, -1));
 
+        inventoryButton.setText("Inventory");
+        inventoryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inventoryButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(inventoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 170, 40));
+
+        deleteAccountButton.setText("Delete Account");
+        getContentPane().add(deleteAccountButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 180, 40));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void LogoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutBtnActionPerformed
-        //TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_LogoutBtnActionPerformed
-public JLabel getWelcomeLabel(){
+
+    private void inventoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventoryButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inventoryButtonActionPerformed
+
+    
+    public JLabel getWelcomeLabel(){
 return welcomeLabel;
 }
     /**
@@ -117,6 +155,7 @@ return welcomeLabel;
             java.util.logging.Logger.getLogger(WardenDashboardView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -128,10 +167,13 @@ return welcomeLabel;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LogoutBtn;
+    private javax.swing.JButton deleteAccountButton;
+    private javax.swing.JButton inventoryButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JLabel label;
     private javax.swing.JButton roomButton;
+    private javax.swing.JButton studentButton;
     private javax.swing.JLabel welcomeLabel;
     // End of variables declaration//GEN-END:variables
 

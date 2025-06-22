@@ -150,6 +150,7 @@ public JLabel getForgotPassword() {
             java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -173,3 +174,4 @@ public JLabel getForgotPassword() {
     private javax.swing.JTextField txtEmail;
     // End of variables declaration//GEN-END:variables
 }
+

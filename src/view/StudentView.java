@@ -4,6 +4,14 @@
  */
 package view;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTable;
+import model.RoomData;
+
 /**
  *
  * @author ACER
@@ -15,8 +23,100 @@ public class StudentView extends javax.swing.JFrame {
      */
     public StudentView() {
         initComponents();
+        
     }
 
+ 
+    
+    
+  public JButton getProfileUploadButton() {
+    return uploadProfileButton;
+}  
+    
+
+
+public JComboBox<String> getRoomDropdown() {
+    return roomDropdown;
+}
+
+
+    
+    public String getNameField() {
+    return nameField.getText();
+}
+
+public String getEmailField() {
+    return emailField.getText();
+}
+
+public String getPhoneField() {
+    return phoneField.getText();
+}
+
+public String getSelectedSex() {
+    return (String) sexComboBox.getSelectedItem();
+}
+
+public String getAgeField() {
+    return ageField.getText();
+}
+
+public String getOccupationField() {
+    return occupationField.getText();
+}
+
+public String getInstitutionField() {
+    return institutionField.getText();
+}
+
+
+public String getSelectedRoom() {
+    return (String) roomDropdown.getSelectedItem();
+}
+
+public JTable getStudentTable() {
+    return studentTable;
+}
+
+public JButton getAddButton() {
+    return addButton;
+}
+
+public JButton getBackButton() {
+    return backButton;
+}
+
+    
+    
+ private Map<String, Integer> roomMap = new HashMap<>();
+
+public void populateRoomDropdown(List<RoomData> rooms) {
+    roomDropdown.removeAllItems();
+    roomMap.clear();
+
+    for (RoomData room : rooms) {
+        String display = room.getRoomNo() + " - " + room.getRoomStatus();
+        roomDropdown.addItem(display);
+        roomMap.put(display, room.getRoomId()); // Map string to ID
+    }
+}
+
+
+// Give controller access to full map
+public Map<String, Integer> getRoomMap() {
+    return roomMap;
+}
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,27 +128,117 @@ public class StudentView extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         studentTable = new javax.swing.JTable();
+        nameField = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        emailField = new javax.swing.JTextField();
+        ageField = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        sexComboBox = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        phoneField = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        occupationField = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        institutionField = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        uploadProfileButton = new javax.swing.JButton();
+        addButton = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
+        roomDropdown = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         studentTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Student Id", "Student Name", "room no"
             }
         ));
         jScrollPane1.setViewportView(studentTable);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 60, 360, 110));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, 360, 110));
+        getContentPane().add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 120, -1));
+
+        jLabel1.setText("Full Name");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, -1));
+
+        jLabel2.setText("Email :");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, -1, -1));
+
+        emailField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailFieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 120, -1));
+        getContentPane().add(ageField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 130, -1));
+
+        jLabel3.setText("Phone Number");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
+
+        sexComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+        getContentPane().add(sexComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 130, -1));
+
+        jLabel4.setText("Gender :");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, -1));
+        getContentPane().add(phoneField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 120, 20));
+
+        jLabel5.setText("Age :");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, -1, -1));
+
+        occupationField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                occupationFieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(occupationField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 130, -1));
+
+        jLabel6.setText("Occupation: ");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, -1, -1));
+
+        institutionField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                institutionFieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(institutionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 130, -1));
+
+        jLabel7.setText("Institution :");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, -1, -1));
+
+        uploadProfileButton.setText("Upload profile");
+        getContentPane().add(uploadProfileButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, -1, -1));
+
+        addButton.setText("Add");
+        getContentPane().add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 480, -1, -1));
+
+        backButton.setText("⬅️");
+        getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+
+        roomDropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(roomDropdown, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 430, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void emailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailFieldActionPerformed
+
+    private void occupationFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_occupationFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_occupationFieldActionPerformed
+
+    private void institutionFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_institutionFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_institutionFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -76,6 +266,7 @@ public class StudentView extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(StudentView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -86,7 +277,25 @@ public class StudentView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addButton;
+    private javax.swing.JTextField ageField;
+    private javax.swing.JButton backButton;
+    private javax.swing.JTextField emailField;
+    private javax.swing.JTextField institutionField;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField nameField;
+    private javax.swing.JTextField occupationField;
+    private javax.swing.JTextField phoneField;
+    private javax.swing.JComboBox<String> roomDropdown;
+    private javax.swing.JComboBox<String> sexComboBox;
     private javax.swing.JTable studentTable;
+    private javax.swing.JButton uploadProfileButton;
     // End of variables declaration//GEN-END:variables
 }
