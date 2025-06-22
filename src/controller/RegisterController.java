@@ -28,7 +28,7 @@ public class RegisterController {
 
         // Add listeners
         this.registerView.getRegisterButton().addActionListener(new RegisterAction());
-        this.registerView.getRedirectLoginLabel().addMouseListener(new RedirectToLogin());
+        this.registerView.getRedirectLoginLabel().addMouseListener(new RegisterController.RedirectToLogin());
     }
 
     public void open() {

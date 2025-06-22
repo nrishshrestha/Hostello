@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
 /Hostello_App_1/nbproject/private/
 /dist/
 /build/build/classes/
-<<<<<<< HEAD
+
 
 build/
 nbproject/private/
@@ -10,9 +10,9 @@ src/view/RoomViewFix.java
 src/view/RoomViewFix.form
 *.class
 .idea/
-=======
+
 /nbproject/private/
-=======
+
 # Ignore NetBeans private configs
 nbproject/private/
 Hostello_App_1/nbproject/
@@ -24,5 +24,4 @@ dist/
 
 # Ignore compiled classes
 *.class
->>>>>>> main
->>>>>>> fb580745053b605471ea10c3baa6d5814bc9708d
+

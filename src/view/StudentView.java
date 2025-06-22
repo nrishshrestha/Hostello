@@ -147,6 +147,11 @@ public Map<String, Integer> getRoomMap() {
         backButton = new javax.swing.JButton();
         roomDropdown = new javax.swing.JComboBox<>();
 
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -163,6 +168,7 @@ public Map<String, Integer> getRoomMap() {
         ));
         jScrollPane1.setViewportView(studentTable);
 
+
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, 360, 110));
         getContentPane().add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 120, -1));
 
@@ -172,11 +178,25 @@ public Map<String, Integer> getRoomMap() {
         jLabel2.setText("Email :");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, -1, -1));
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 630, 470, 140));
+        getContentPane().add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 180, 20));
+
+        jLabel1.setFont(new java.awt.Font("Yu Gothic Medium", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Full Name:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, 30));
+
+        jLabel2.setFont(new java.awt.Font("Yu Gothic Medium", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Email :");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, -1, 30));
+
         emailField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailFieldActionPerformed(evt);
             }
         });
+
         getContentPane().add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 120, -1));
         getContentPane().add(ageField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 130, -1));
 
@@ -193,21 +213,54 @@ public Map<String, Integer> getRoomMap() {
         jLabel5.setText("Age :");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, -1, -1));
 
+        getContentPane().add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 180, 20));
+        getContentPane().add(ageField, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, 180, 20));
+
+        jLabel3.setFont(new java.awt.Font("Yu Gothic Medium", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Phone Number:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, -1, 30));
+
+        sexComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+        getContentPane().add(sexComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, 180, 20));
+
+        jLabel4.setFont(new java.awt.Font("Yu Gothic Medium", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Gender :");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, -1, 30));
+        getContentPane().add(phoneField, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, 180, 20));
+
+        jLabel5.setFont(new java.awt.Font("Yu Gothic Medium", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Age :");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, -1, 30));
+
+
         occupationField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 occupationFieldActionPerformed(evt);
             }
         });
+
         getContentPane().add(occupationField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 130, -1));
 
         jLabel6.setText("Occupation: ");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, -1, -1));
+
+        getContentPane().add(occupationField, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, 180, 20));
+
+        jLabel6.setFont(new java.awt.Font("Yu Gothic Medium", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Occupation: ");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, -1, 30));
+
 
         institutionField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 institutionFieldActionPerformed(evt);
             }
         });
+
         getContentPane().add(institutionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 130, -1));
 
         jLabel7.setText("Institution :");
@@ -224,6 +277,43 @@ public Map<String, Integer> getRoomMap() {
 
         roomDropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(roomDropdown, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 430, -1, -1));
+
+        getContentPane().add(institutionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, 180, 20));
+
+        jLabel7.setFont(new java.awt.Font("Yu Gothic Medium", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Institution :");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, -1, 30));
+
+        uploadProfileButton.setBackground(new java.awt.Color(102, 255, 204));
+        uploadProfileButton.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
+        uploadProfileButton.setText("Upload profile");
+        getContentPane().add(uploadProfileButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, 180, 30));
+
+        addButton.setBackground(new java.awt.Color(204, 255, 204));
+        addButton.setFont(new java.awt.Font("Yu Gothic Medium", 1, 18)); // NOI18N
+        addButton.setText("Add");
+        getContentPane().add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, -1, 40));
+
+        backButton.setText("⬅️");
+        getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 50));
+
+        roomDropdown.setFont(new java.awt.Font("Yu Gothic Medium", 0, 14)); // NOI18N
+        roomDropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(roomDropdown, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, 130, 30));
+
+        jLabel8.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 48)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 204));
+        jLabel8.setText("Register Form");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, -1, -1));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagepicker/hostelbuild.png"))); // NOI18N
+        jLabel9.setMaximumSize(new java.awt.Dimension(400, 200));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 730, 800));
+
+        jPanel1.setBackground(new java.awt.Color(70, 69, 68));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 800));
+
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -289,6 +379,11 @@ public Map<String, Integer> getRoomMap() {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameField;
     private javax.swing.JTextField occupationField;

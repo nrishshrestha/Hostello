@@ -65,8 +65,14 @@ return welcomeLabel;
         adminButton = new javax.swing.JButton();
         deleteAccountButton = new javax.swing.JButton();
 
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
 
         LogoutBtn.setText("Logout");
         getContentPane().add(LogoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(828, 79, -1, -1));
@@ -75,8 +81,22 @@ return welcomeLabel;
         titleLabel.setText("Admin Dashboard");
         getContentPane().add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 220, 100));
 
+        LogoutBtn.setBackground(new java.awt.Color(0, 0, 0));
+        LogoutBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        LogoutBtn.setForeground(new java.awt.Color(255, 255, 255));
+        LogoutBtn.setText("Logout");
+        getContentPane().add(LogoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
+
+        titleLabel.setFont(new java.awt.Font("Yu Gothic Medium", 1, 36)); // NOI18N
+        titleLabel.setForeground(new java.awt.Color(255, 255, 204));
+        titleLabel.setText("Admin Dashboard");
+        getContentPane().add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 320, 100));
+
+
         welcomeLabel.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        welcomeLabel.setForeground(new java.awt.Color(255, 255, 255));
         welcomeLabel.setText("..");
+
         getContentPane().add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 190, -1));
 
         wardenButton.setText("Wardens");
@@ -87,6 +107,35 @@ return welcomeLabel;
 
         deleteAccountButton.setText("Delete Account");
         getContentPane().add(deleteAccountButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, -1, -1));
+
+        getContentPane().add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 190, -1));
+
+        wardenButton.setBackground(new java.awt.Color(204, 204, 204));
+        wardenButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
+        wardenButton.setText("Wardens");
+        getContentPane().add(wardenButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+
+        adminButton.setBackground(new java.awt.Color(51, 102, 255));
+        adminButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
+        adminButton.setForeground(new java.awt.Color(255, 255, 255));
+        adminButton.setText("Admins");
+        getContentPane().add(adminButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 130, -1));
+
+        deleteAccountButton.setBackground(new java.awt.Color(255, 0, 51));
+        deleteAccountButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
+        deleteAccountButton.setForeground(new java.awt.Color(255, 255, 255));
+        deleteAccountButton.setText("Delete Account");
+        getContentPane().add(deleteAccountButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagepicker/hos.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, -1, -1));
+
+        jPanel2.setBackground(new java.awt.Color(70, 69, 68));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 310, 480));
+
+        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 480));
+
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -131,6 +180,12 @@ return welcomeLabel;
     private javax.swing.JButton LogoutBtn;
     private javax.swing.JButton adminButton;
     private javax.swing.JButton deleteAccountButton;
+
+
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+
     private javax.swing.JLabel titleLabel;
     private javax.swing.JButton wardenButton;
     private javax.swing.JLabel welcomeLabel;

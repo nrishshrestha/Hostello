@@ -54,40 +54,42 @@ public class WardenDashboardView extends javax.swing.JFrame {
         LogoutBtn = new javax.swing.JButton();
         label = new javax.swing.JLabel();
         welcomeLabel = new javax.swing.JLabel();
-        jToolBar1 = new javax.swing.JToolBar();
         jLabel1 = new javax.swing.JLabel();
         studentButton = new javax.swing.JButton();
         roomButton = new javax.swing.JButton();
         inventoryButton = new javax.swing.JButton();
         deleteAccountButton = new javax.swing.JButton();
 
+        jPanel1 = new javax.swing.JPanel();
+
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        LogoutBtn.setBackground(new java.awt.Color(153, 153, 153));
-        LogoutBtn.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        LogoutBtn.setForeground(new java.awt.Color(51, 51, 255));
+        LogoutBtn.setBackground(new java.awt.Color(153, 0, 0));
+        LogoutBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        LogoutBtn.setForeground(new java.awt.Color(255, 255, 255));
         LogoutBtn.setText("Logout");
         LogoutBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogoutBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(LogoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, -1, -1));
+        getContentPane().add(LogoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 170, 40));
 
-        label.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
+        label.setFont(new java.awt.Font("Yu Gothic Medium", 1, 36)); // NOI18N
+        label.setForeground(new java.awt.Color(255, 255, 204));
         label.setText("Warden Dashboard");
-        getContentPane().add(label, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 350, 60));
+        getContentPane().add(label, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 350, 60));
 
         welcomeLabel.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        welcomeLabel.setForeground(new java.awt.Color(255, 255, 255));
         welcomeLabel.setText("..");
-        getContentPane().add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 370, -1));
-
-        jToolBar1.setRollover(true);
-        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 370, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagepicker/room.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, -50, 470, 520));
+
 
         studentButton.setBackground(new java.awt.Color(255, 0, 51));
         studentButton.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
@@ -98,10 +100,41 @@ public class WardenDashboardView extends javax.swing.JFrame {
 
         roomButton.setBackground(new java.awt.Color(255, 0, 51));
         roomButton.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+
+        studentButton.setBackground(new java.awt.Color(102, 102, 102));
+        studentButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
+        studentButton.setForeground(new java.awt.Color(255, 255, 255));
+        studentButton.setText("Students");
+        studentButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(studentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 170, 40));
+
+        roomButton.setBackground(new java.awt.Color(102, 102, 102));
+        roomButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
+
         roomButton.setForeground(new java.awt.Color(255, 255, 255));
         roomButton.setText("Rooms");
         roomButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(roomButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 170, -1));
+        getContentPane().add(roomButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 170, 40));
+
+        inventoryButton.setBackground(new java.awt.Color(102, 102, 102));
+        inventoryButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
+        inventoryButton.setForeground(new java.awt.Color(255, 255, 255));
+        inventoryButton.setText("Inventory");
+        inventoryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inventoryButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(inventoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 170, 40));
+
+        deleteAccountButton.setBackground(new java.awt.Color(153, 0, 0));
+        deleteAccountButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        deleteAccountButton.setForeground(new java.awt.Color(255, 255, 255));
+        deleteAccountButton.setText("Delete Account");
+        getContentPane().add(deleteAccountButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 170, 40));
+
+        jPanel1.setBackground(new java.awt.Color(70, 69, 68));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 470));
 
         inventoryButton.setText("Inventory");
         inventoryButton.addActionListener(new java.awt.event.ActionListener() {
@@ -170,7 +203,7 @@ return welcomeLabel;
     private javax.swing.JButton deleteAccountButton;
     private javax.swing.JButton inventoryButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel label;
     private javax.swing.JButton roomButton;
     private javax.swing.JButton studentButton;

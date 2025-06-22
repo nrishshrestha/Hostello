@@ -76,11 +76,22 @@ private JFrame mainFrame;
         jLabel3 = new javax.swing.JLabel();
         passwordField = new javax.swing.JPasswordField();
 
+
+        jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         backButton.setText("⬅️");
+
         getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
+        getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 60));
+
 
         wardenTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -94,6 +105,7 @@ private JFrame mainFrame;
             }
         ));
         jScrollPane1.setViewportView(wardenTable);
+
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 110, 370, 110));
 
@@ -111,6 +123,47 @@ private JFrame mainFrame;
         jLabel3.setText("password");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, -1, -1));
         getContentPane().add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 160, -1));
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 360, 110));
+
+        addButton.setBackground(new java.awt.Color(204, 255, 204));
+        addButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        addButton.setText("Add Warden");
+        getContentPane().add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Name:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
+        getContentPane().add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 170, 30));
+
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Email:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
+        getContentPane().add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 170, 30));
+
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Password:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
+        getContentPane().add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 170, 30));
+
+        jPanel1.setBackground(new java.awt.Color(70, 69, 68));
+
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 204));
+        jLabel4.setText("Add Warden");
+        jPanel1.add(jLabel4);
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 520));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagepicker/hos.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, -1, -1));
+
+        jPanel2.setBackground(new java.awt.Color(70, 69, 68));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 210, 520));
+
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -141,7 +194,6 @@ private JFrame mainFrame;
             java.util.logging.Logger.getLogger(WardenView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -158,6 +210,12 @@ private JFrame mainFrame;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameField;
     private javax.swing.JPasswordField passwordField;

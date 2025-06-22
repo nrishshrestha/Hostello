@@ -80,10 +80,17 @@ public JButton getBackButton() {
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
+
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+
+
         jLabel7.setText("jLabel7");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         getContentPane().add(itemNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 130, -1));
         getContentPane().add(initialCountField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 130, -1));
         getContentPane().add(ongoingCountField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 140, -1));
@@ -98,6 +105,23 @@ public JButton getBackButton() {
         backButton.setText("⬅️");
         getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 120, -1));
 
+        getContentPane().add(itemNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 170, 30));
+        getContentPane().add(initialCountField, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 170, 30));
+        getContentPane().add(ongoingCountField, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 170, 30));
+        getContentPane().add(costPerItemField, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, 170, 30));
+
+        statusComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "remaining", "finished" }));
+        getContentPane().add(statusComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 170, 30));
+
+        addButton.setBackground(new java.awt.Color(204, 255, 204));
+        addButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        addButton.setText("Add");
+        getContentPane().add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, -1, -1));
+
+        backButton.setText("⬅️");
+        getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 60));
+
+
         inventoryTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -110,6 +134,7 @@ public JButton getBackButton() {
             }
         ));
         jScrollPane1.setViewportView(inventoryTable);
+
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 150, 420, 130));
 
@@ -129,6 +154,49 @@ public JButton getBackButton() {
         jLabel6.setText("Cost per item");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, -1, -1));
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, -1, -1));
+
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 420, 130));
+
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Item Name:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Initial Count:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 90, -1));
+
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Remaining Count:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 150, -1));
+
+        jLabel5.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Item Status:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Cost per Item:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 36)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 204));
+        jLabel9.setText("Inventory");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, -1, -1));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagepicker/1261163.png"))); // NOI18N
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 580, 510));
+
+        jPanel1.setBackground(new java.awt.Color(70, 69, 68));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 560));
+
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -159,7 +227,10 @@ public JButton getBackButton() {
             java.util.logging.Logger.getLogger(InventoryView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+
         //</editor-fold>
+
+
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -177,6 +248,10 @@ public JButton getBackButton() {
     private javax.swing.JTable inventoryTable;
     private javax.swing.JTextField itemNameField;
     private javax.swing.JLabel jLabel1;
+
+
+    private javax.swing.JLabel jLabel10;
+
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -184,6 +259,11 @@ public JButton getBackButton() {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+
+
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField ongoingCountField;
     private javax.swing.JComboBox<String> statusComboBox;

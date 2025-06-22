@@ -5,9 +5,9 @@
 package controller;
 import dao.RoomDao;
 import dao.UserDao;
+import view.RoomView;
 import java.awt.GridLayout;
 import model.RoomData;
-import view.RoomView;
 import view.WardenDashboardView;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -40,13 +40,15 @@ import model.UserData;
   }
 
 class RedirectToDashboard implements ActionListener {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-          WardenDashboardView wardenDashboardView= new WardenDashboardView();
-          UserDao userDao=new UserDao();
-          UserData user=userDao.getUserById(currentUserId);
-          new WardenDashboardController(wardenDashboardView,user).open();
-      }}
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            WardenDashboardView dash = new WardenDashboardView();
+            UserDao userDao = new UserDao();
+            UserData user = userDao.getUserById(currentUserId);
+            new WardenDashboardController(dash, user).open();
+            roomView.dispose();
+        }
+}
 
 /////////////////////////////////////////////////////////////////////////////
   private class RoomTableClickHandler extends MouseAdapter {
@@ -71,16 +73,46 @@ class RedirectToDashboard implements ActionListener {
 private void showPopup(int roomId, String roomNo, String type, String status, double cost) {
   JFrame popup = new JFrame("Room Actions");
   popup.setSize(300, 200);
-  popup.setLayout(new GridLayout(3, 1));
+  popup.setLayout(new GridLayout(2, 2));
   popup.setLocationRelativeTo(roomView.getMainFrame());
 
+  JButton readButton = new JButton("Read Info");
   JButton updateButton = new JButton("Update");
   JButton deleteButton = new JButton("Delete");
   JButton cancelButton = new JButton("Cancel");
+popup.add(readButton);
+ popup.add(updateButton);
+  popup.add(deleteButton);
+  popup.add(cancelButton);
+  popup.setVisible(true);
 
 
+  readButton.addActionListener(e -> {
+    JPanel readPanel = new JPanel(new GridLayout(0, 2, 10, 10)); // 2-column grid, flexible rows
 
+    readPanel.add(new JLabel("Room ID:"));
+    readPanel.add(new JLabel(String.valueOf(roomId)));
 
+    readPanel.add(new JLabel("Room No:"));
+    readPanel.add(new JLabel(roomNo));
+
+    readPanel.add(new JLabel("Type:"));
+    readPanel.add(new JLabel(type));
+
+    readPanel.add(new JLabel("Status:"));
+    readPanel.add(new JLabel(status));
+
+    readPanel.add(new JLabel("Cost:"));
+    readPanel.add(new JLabel(String.valueOf(cost)));
+
+    // Show info in a simple message dialog
+    JOptionPane.showMessageDialog(popup, readPanel, "Room Info", JOptionPane.PLAIN_MESSAGE);
+});
+
+  
+  
+  
+  
 updateButton.addActionListener(e -> {
     JPanel panel = new JPanel(new GridLayout(0, 1));
 
@@ -142,10 +174,7 @@ updateButton.addActionListener(e -> {
 
   cancelButton.addActionListener(e -> popup.dispose());
 
-  popup.add(updateButton);
-  popup.add(deleteButton);
-  popup.add(cancelButton);
-  popup.setVisible(true);
+ 
 }
 
 ////////////////////////////////////////////////////////////////////
