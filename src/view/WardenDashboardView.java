@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
  *
  * @author ACER
  */
-public class WardenDashboardView extends javax.swing.JFrame {
+public class  WardenDashboardView extends javax.swing.JFrame {
 
     /**
      * Creates new form WardenDashboardView

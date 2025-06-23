@@ -1,7 +1,7 @@
 import dao.InventoryDao;
 import model.InventoryData;
 import org.junit.*;
-
+    
 import static org.junit.Assert.*;
 
 import java.util.List;

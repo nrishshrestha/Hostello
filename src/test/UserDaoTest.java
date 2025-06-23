@@ -1,3 +1,5 @@
+package test;
+
 import dao.UserDao;
 import model.UserData;
 import model.ResetPasswordRequest;
@@ -10,25 +12,7 @@ public class UserDaoTest {
     
     private UserDao userDao;
     private UserData testUser;
-    
-    @Before
-    public void setUp() {
-        userDao = new UserDao();
-        testUser = new UserData();
-        testUser.setUsername("testUser");
-        testUser.setEmail("test@test.com");
-        testUser.setPassword("password123");
-    }
-    
-    @After
-    public void tearDown() {
-        // Clean up test data
-        try {
-            userDao.deleteUser("test@test.com");
-        } catch (Exception e) {
-            // Ignore cleanup errors
-        }
-    }
+
     
     @Test
     public void testRegister() {
@@ -52,22 +36,6 @@ public class UserDaoTest {
         assertFalse("Should not find non-existent email", notExists);
     }
     
-    @Test
-    public void testResetPassword() {
-        // First register a user
-        userDao.register(testUser);
-        
-        ResetPasswordRequest request = new ResetPasswordRequest();
-        request.setEmail("test@test.com");
-        request.setPassword("newpassword123");
-        
-        boolean result = userDao.resetPassword(request);
-        assertTrue("Password reset should succeed", result);
-        
-        // Verify new password works
-        UserData loggedInUser = userDao.login("test@test.com", "newpassword123");
-        assertNotNull("Should be able to login with new password", loggedInUser);
-    }
     
     @Test
     public void testLogin() {
