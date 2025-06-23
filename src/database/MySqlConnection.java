@@ -19,7 +19,7 @@ public class MySqlConnection implements DbConnection {
     public Connection openConnection() {
         try {
             String username = "root";
-            String password = "1234";
+            String password = "admin123";
             String url = "jdbc:mysql://localhost:3306/hostel";
             Class.forName("com.mysql.cj.jdbc.Driver");
             
